@@ -1,0 +1,148 @@
+/* ==========================================================================
+   Level Nexus — footer.css
+   ========================================================================== */
+
+.site-footer {
+  background: var(--ink);
+  color: var(--text-invert);
+  padding-top: var(--sp-7);
+  border-top: 3px solid var(--teal);
+}
+
+.site-footer a { color: rgba(234, 241, 251, .74); text-decoration: none; }
+.site-footer a:hover { color: var(--teal); }
+
+.footer-grid {
+  display: grid;
+  gap: var(--sp-6);
+  padding-bottom: var(--sp-6);
+}
+
+@media (min-width: 720px) {
+  .footer-grid { grid-template-columns: 1.4fr 1fr 1fr; gap: var(--sp-6); }
+}
+
+@media (min-width: 1000px) {
+  .footer-grid { grid-template-columns: 1.6fr 1fr 1fr 1.2fr; }
+}
+
+.footer-brand img { height: 34px; width: auto; margin-bottom: var(--sp-4); }
+
+.footer-brand p {
+  color: rgba(234, 241, 251, .68);
+  font-size: var(--step--1);
+  max-width: 38ch;
+}
+
+.footer-col__title {
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin: 0 0 var(--sp-4);
+  font-weight: 500;
+}
+
+.footer-list { list-style: none; margin: 0; padding: 0; }
+
+.footer-list li { margin-bottom: var(--sp-3); font-size: var(--step--1); }
+
+.footer-list a { display: inline-block; }
+
+.footer-contact { list-style: none; margin: 0; padding: 0; }
+
+.footer-contact li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-4);
+  font-size: var(--step--1);
+  color: rgba(234, 241, 251, .74);
+}
+
+.footer-contact svg {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  margin-top: .28em;
+  color: var(--teal);
+}
+
+.footer-contact strong {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: rgba(234, 241, 251, .45);
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+/* --- Social ------------------------------------------------------------- */
+.social {
+  display: flex;
+  gap: var(--sp-2);
+  list-style: none;
+  margin: var(--sp-4) 0 0;
+  padding: 0;
+}
+
+.social li { margin: 0; }
+
+.social a {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(234, 241, 251, .2);
+  border-radius: var(--r-md);
+  color: rgba(234, 241, 251, .74);
+  transition: border-color var(--dur) var(--ease),
+              color var(--dur) var(--ease),
+              background-color var(--dur) var(--ease);
+}
+
+.social a:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+  background: rgba(15, 211, 196, .09);
+}
+
+.social svg { width: 18px; height: 18px; }
+
+/* --- Bottom bar --------------------------------------------------------- */
+.footer-bottom {
+  border-top: 1px solid rgba(234, 241, 251, .12);
+  padding-block: var(--sp-5);
+}
+
+.footer-bottom__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  color: rgba(234, 241, 251, .48);
+  letter-spacing: .02em;
+}
+
+@media (min-width: 720px) {
+  .footer-bottom__inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.footer-bottom__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-4);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-bottom__links li { margin: 0; }

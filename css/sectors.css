@@ -1,0 +1,19 @@
+/* Generated sector accent tokens — keep in sync with data/materials.js */
+:root {
+  --sector-business: #153A77;
+  --sector-safety: #E8562B;
+  --sector-tech: #0FD3C4;
+  --sector-mining: #7A5B2E;
+  --sector-transport: #3F5FBF;
+  --sector-construction: #FE9A36;
+  --sector-agriculture: #2E8B57;
+  --sector-education: #6B4FC4;
+  --sector-mechanical: #4A6E8A;
+  --sector-beauty: #C2478A;
+  --sector-community: #2196A6;
+  --sector-security: #8C3B4A;
+  --sector-hospitality: #D2792B;
+  --sector-manufacturing: #5C6B7A;
+  --sector-electrical: #D4A017;
+  --sector-general: #6B7A8F;
+}

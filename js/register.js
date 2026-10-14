@@ -12,7 +12,7 @@ window.LN.register = (function () {
 
   var u = window.LN.util;
 
-  var PAGE = 24;
+  var PAGE = 12;
 
   var data;
   var state = { q: '', sector: '', type: '', shown: PAGE };
@@ -43,18 +43,16 @@ window.LN.register = (function () {
     return safe.replace(re, '<mark>$1</mark>');
   }
 
-  function rowHtml(m, query) {
+  function cardHtml(m, query) {
     var color = sectorColor[m.sector] || '#153A77';
     var badgeClass = 'code-chip--' + m.badge.toLowerCase();
 
-    return '<li class="material" style="--sector:' + color + '">' +
-      '<div>' +
-        '<h3 class="material__title">' + highlight(m.title, query) + '</h3>' +
-        '<p class="material__qual" style="margin:6px 0 0">' +
-          u.escapeHtml(m.qualification) +
-        '</p>' +
+    return '<li class="reg-card" style="--sector:' + color + '">' +
+      '<div class="reg-card__body">' +
+        '<h3 class="reg-card__title">' + highlight(m.title, query) + '</h3>' +
+        '<p class="reg-card__qual">' + u.escapeHtml(m.qualification) + '</p>' +
       '</div>' +
-      '<div class="material__meta">' +
+      '<div class="reg-card__meta">' +
         '<span class="sector-tag">' + u.escapeHtml(m.sector) + '</span>' +
         '<span class="code-chip ' + badgeClass + '">' +
           '<span class="code-chip__badge">' + u.escapeHtml(m.badge) + '</span>' +
@@ -89,7 +87,7 @@ window.LN.register = (function () {
 
     el.empty.hidden = true;
     el.list.hidden = false;
-    el.list.innerHTML = slice.map(function (m) { return rowHtml(m, query); }).join('');
+    el.list.innerHTML = slice.map(function (m) { return cardHtml(m, query); }).join('');
 
     /* Load-more */
     if (el.more) {
@@ -250,7 +248,7 @@ window.LN.register = (function () {
         state.shown += PAGE;
         render();
         // Move focus to the first newly revealed row for keyboard users.
-        var rows = u.$$('.material', el.list);
+        var rows = u.$$('.reg-card', el.list);
         var target = rows[state.shown - PAGE];
         if (target) {
           target.setAttribute('tabindex', '-1');
@@ -280,12 +278,37 @@ window.LN.register = (function () {
       });
     }
 
-    if (el.filtersToggle && el.filters) {
+    if (el.filtersToggle) {
       el.filtersToggle.addEventListener('click', function () {
-        var open = el.filters.classList.toggle('is-open');
-        el.filtersToggle.setAttribute('aria-expanded', String(open));
+        setRail(!el.root.classList.contains('is-rail-open'));
       });
     }
+
+    if (el.railClose) {
+      el.railClose.addEventListener('click', function () { setRail(false); });
+    }
+
+    if (el.scrim) {
+      el.scrim.addEventListener('click', function () { setRail(false); });
+    }
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && el.root && el.root.classList.contains('is-rail-open')) setRail(false);
+    });
+
+    // Above the breakpoint the rail is permanently visible, so drop any open
+    // state that was left behind by a narrow viewport.
+    window.addEventListener('resize', u.debounce(function () {
+      if (window.innerWidth > 1080) setRail(false);
+    }, 150));
+  }
+
+  /* On narrow screens the rail becomes a slide-over sheet. */
+  function setRail(open) {
+    if (!el.root) return;
+    el.root.classList.toggle('is-rail-open', open);
+    if (el.filtersToggle) el.filtersToggle.setAttribute('aria-expanded', String(open));
+    if (el.scrim) el.scrim.hidden = !open;
   }
 
   function init() {
@@ -311,6 +334,9 @@ window.LN.register = (function () {
     el.filters = u.$('#register-filters');
     el.filtersToggle = u.$('#filters-toggle');
     el.filterCount = u.$('#filters-count');
+    el.root = root;
+    el.scrim = u.$('#register-scrim');
+    el.railClose = u.$('#register-rail-close');
 
     buildSectorPills();
     buildTypePills();

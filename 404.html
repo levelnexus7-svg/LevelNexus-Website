@@ -8,24 +8,20 @@
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Space+Grotesk:wght@600;700&amp;display=swap">
-<link rel="stylesheet" href="css/base.css">
-<link rel="stylesheet" href="css/components.css">
-<style>
-  body { display: grid; place-items: center; min-height: 100vh; background: var(--ink); color: var(--text-invert); text-align: center; padding: var(--sp-6); }
-  h1 { color: #fff; font-size: var(--step-4); }
-  .code { font-family: var(--font-mono); color: var(--teal); letter-spacing: .2em; margin-bottom: var(--sp-4); }
-  p { color: rgba(234,241,251,.75); max-width: 46ch; margin-inline: auto; }
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Montserrat:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="css/sectors.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/platform.css">
+<script>(function(d){if(!matchMedia("(prefers-reduced-motion: reduce)").matches&&"IntersectionObserver"in window)d.classList.add("js-motion")})(document.documentElement)</script>
 </head>
-<body>
+<body class="err">
   <main>
     <p class="code">ERROR 404</p>
     <h1>That page isn't on file</h1>
     <p>The link may be out of date. The Materials Register is the best place to start.</p>
-    <div class="btn-row" style="justify-content:center;margin-top:var(--sp-6)">
-      <a class="btn btn--teal" href="materials.html">Search the register</a>
-      <a class="btn btn--ghost-light" href="index.html">Back to home</a>
+    <div class="btn-row">
+      <a class="btn teal" href="materials.html">Search the register</a>
+      <a class="btn line-light" href="index.html">Back to home</a>
     </div>
   </main>
 </body>

@@ -24,321 +24,291 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap">
-
-<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Montserrat:wght@400;500;600;700&amp;display=swap">
 <link rel="stylesheet" href="css/sectors.css">
-<link rel="stylesheet" href="css/components.css">
-<link rel="stylesheet" href="css/header.css">
-<link rel="stylesheet" href="css/footer.css">
-<link rel="stylesheet" href="css/pages.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/platform.css">
+<script>(function(d){if(!matchMedia("(prefers-reduced-motion: reduce)").matches&&"IntersectionObserver"in window)d.classList.add("js-motion")})(document.documentElement)</script>
 </head>
 <body>
 
-  <a class="skip-link" href="#main">Skip to main content</a>
+<a class="skip" href="#main">Skip to main content</a>
 
-  <header class="site-header">
-    <div class="wrap site-header__inner">
-      <a class="brand" href="index.html" aria-label="Level Nexus — home">
-        <img src="assets/img/logo-full.png"
-             srcset="assets/img/logo-full.png 1x, assets/img/logo-full@2x.png 2x"
-             alt="Level Nexus — Creating Possibilities" width="361" height="120">
-      </a>
+<div class="progress" aria-hidden="true"></div>
 
-      <nav class="nav" aria-label="Main">
-        <ul class="nav__list">
-            <li><a class="nav__link" data-nav href="index.html">Home</a></li>
-            <li><a class="nav__link" data-nav href="materials.html">Materials Register</a></li>
-            <li><a class="nav__link" data-nav href="services.html">Services</a></li>
-            <li><a class="nav__link" data-nav href="about.html">About</a></li>
-        </ul>
-        <a class="btn btn--primary btn--sm nav__cta" href="contact.html" data-nav>Get a quote</a>
-      </nav>
-
-      <button class="nav-toggle" type="button" aria-expanded="false"
-              aria-controls="mobile-nav" aria-label="Open menu">
-        <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
-      </button>
-    </div>
-
-    <div class="mobile-nav" id="mobile-nav">
-      <div class="wrap">
-        <ul class="mobile-nav__list">
-            <li><a class="mobile-nav__link" data-nav href="index.html"><span>Home</span></a></li>
-            <li><a class="mobile-nav__link" data-nav href="materials.html"><span>Materials Register</span><span class="mobile-nav__idx">252</span></a></li>
-            <li><a class="mobile-nav__link" data-nav href="services.html"><span>Services</span><span class="mobile-nav__idx">4</span></a></li>
-            <li><a class="mobile-nav__link" data-nav href="about.html"><span>About</span></a></li>
-            <li><a class="mobile-nav__link" data-nav href="contact.html"><span>Contact</span></a></li>
-        </ul>
-        <div class="mobile-nav__foot">
-          <a class="btn btn--whatsapp btn--wide" href="https://wa.me/27847624831" data-wa rel="noopener" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2.5c-5.24 0-9.5 4.26-9.5 9.5 0 1.68.44 3.32 1.28 4.77L2.5 21.5l4.86-1.27a9.46 9.46 0 0 0 4.68 1.22h.01c5.23 0 9.49-4.26 9.49-9.5s-4.26-9.45-9.5-9.45zm0 17.4h-.01a7.9 7.9 0 0 1-4.02-1.1l-.29-.17-2.98.78.8-2.9-.19-.3a7.87 7.87 0 0 1-1.21-4.21c0-4.36 3.55-7.9 7.91-7.9a7.85 7.85 0 0 1 5.58 2.32 7.83 7.83 0 0 1 2.31 5.59c0 4.36-3.55 7.89-7.9 7.89z"/></svg><span>Chat on WhatsApp</span></a>
-          <a class="mobile-nav__contact" href="mailto:info@levelnexus.co.za">info@levelnexus.co.za</a>
-          <a class="mobile-nav__contact" href="tel:+27847624831">+27 84 762 4831</a>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main id="main">
-    <section class="page-head">
-      <div class="wrap page-head__inner">
-        <ol class="crumbs">
-          <li><a href="index.html">Home</a></li>
-          <li aria-current="page">Services</li>
-        </ol>
-        <h1>Services</h1>
-        <p>Material, accreditation support and the documentation in between — for Skills
-           Development Providers who need to be delivering, not drafting.</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="wrap stack-lg">
-        <article class="service reveal" style="--accent:var(--navy)">
-          <div>
-            <span class="service__no">Service 01</span>
-            <h3>QCTO-aligned learning material</h3>
-            <p>A complete, curriculum-mapped material set for the occupational qualification you are registered against — supplied editable so it goes out under your brand.</p>
-          </div>
-          <ul class="service__list">
-              <li>Learner guides and facilitator guides per knowledge module</li>
-              <li>Practical skills workbooks and simulated workplace activities</li>
-              <li>Work experience logbooks and workplace mentor packs</li>
-              <li>Formative and summative assessment instruments with memoranda</li>
-              <li>Alignment matrix mapping content to the QCTO curriculum document</li>
-              <li>Drawn from 155 occupational qualifications already on file</li>
-          </ul>
-        </article>
-
-        <article class="service reveal" style="--accent:var(--amber)">
-          <div>
-            <span class="service__no">Service 02</span>
-            <h3>Accreditation support for providers</h3>
-            <p>Most applications stall on documentation, not capability. We work through the file with you until it is defensible.</p>
-          </div>
-          <ul class="service__list">
-              <li>Gap analysis against QCTO and SETA accreditation criteria</li>
-              <li>Quality Management System documentation and policy set</li>
-              <li>Assessor and moderator appointment records and matrices</li>
-              <li>Site and facility readiness against programme requirements</li>
-              <li>Evidence file assembly and pre-submission review</li>
-              <li>Support through evaluator queries and site visits</li>
-          </ul>
-        </article>
-
-        <article class="service reveal" style="--accent:var(--teal-700)">
-          <div>
-            <span class="service__no">Service 03</span>
-            <h3>Skills programmes and legacy material</h3>
-            <p>Short, fundable programmes that fill a training calendar and give learners a credential without a full qualification cycle.</p>
-          </div>
-          <ul class="service__list">
-              <li>81 SP-coded skills programmes across every major sector</li>
-              <li>MQA mining programmes including underground hard rock</li>
-              <li>Legacy unit-standard-based material still in demand by employers</li>
-              <li>First aid, OHS representative and evacuation programme sets</li>
-              <li>Foundational learning and end user computing material</li>
-              <li>Ideal for discretionary grant and SETA-funded intakes</li>
-          </ul>
-        </article>
-
-        <article class="service reveal" style="--accent:var(--sector-mining, #7A5B2E)">
-          <div>
-            <span class="service__no">Service 04</span>
-            <h3>Customisation, branding and development</h3>
-            <p>When the register does not have it, or when what you have needs to become yours.</p>
-          </div>
-          <ul class="service__list">
-              <li>Full rebrand to your identity — cover, colour, typography, footer</li>
-              <li>Content adaptation to your delivery model and learner profile</li>
-              <li>New material development against a curriculum document</li>
-              <li>Translation and plain-language simplification</li>
-              <li>Print-ready artwork and bulk print coordination</li>
-              <li>Version control and update service as curricula are revised</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <!-- Process: a genuine sequence, so the numbering carries information -->
-    <section class="section section--ink">
-      <div class="wrap">
-        <div style="max-width:56ch;margin-bottom:var(--sp-6)">
-          <span class="eyebrow">How an order runs</span>
-          <h2>Four steps, no surprises</h2>
-        </div>
-        <div class="process">
-          <div class="process__step">
-            <h3>Send the codes</h3>
-            <p>WhatsApp or email the SAQA IDs, SP codes or qualification titles you need.
-               No form-filling required to get an answer.</p>
-          </div>
-          <div class="process__step">
-            <h3>Get a straight quote</h3>
-            <p>We confirm what is on file, what needs development, the lead time and the
-               price — usually the same working day.</p>
-          </div>
-          <div class="process__step">
-            <h3>Review a sample</h3>
-            <p>You see a sample section before you commit, so you know exactly what
-               lands in your inbox.</p>
-          </div>
-          <div class="process__step">
-            <h3>Delivery and support</h3>
-            <p>Material arrives branded and editable. We stay reachable through your
-               accreditation application and site visit.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="wrap wrap--narrow">
-        <span class="eyebrow eyebrow--amber">Questions we get</span>
-        <h2 style="margin-bottom:var(--sp-6)">Before you ask</h2>
-
-        <div class="faq">
-          <div class="faq__item">
-            <button class="faq__q" type="button">
-              <span>Does buying material make us accredited?</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
-            <div class="faq__a"><p>No, and anyone who tells you otherwise is selling you
-               something. Accreditation is granted to your organisation by the QCTO or the
-               relevant SETA after they assess your capacity, systems, staff and facilities.
-               Material is one required piece of that file. Service 02 above is where we help
-               with the rest.</p></div>
-          </div>
-
-          <div class="faq__item">
-            <button class="faq__q" type="button">
-              <span>Can we put our own logo on it?</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
-            <div class="faq__a"><p>Yes. Material is supplied in editable format and we brand it
-               to your identity before delivery at no extra cost. Learners, assessors and
-               evaluators see your organisation throughout.</p></div>
-          </div>
-
-          <div class="faq__item">
-            <button class="faq__q" type="button">
-              <span>What if our qualification is not in the register?</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
-            <div class="faq__a"><p>Send us the SAQA ID anyway. The register lists what is already
-               developed; it is not the limit of what we can do. If a curriculum document exists
-               we can quote on developing it, and we will say plainly if the timeline does not
-               suit you.</p></div>
-          </div>
-
-          <div class="faq__item">
-            <button class="faq__q" type="button">
-              <span>Do you work outside KwaZulu-Natal?</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
-            <div class="faq__a"><p>We are based in KZN and work with providers in all nine
-               provinces. Material is delivered digitally, and accreditation support runs over
-               video call, email and WhatsApp — the same way it would run with a consultant down
-               the road from you.</p></div>
-          </div>
-
-          <div class="faq__item">
-            <button class="faq__q" type="button">
-              <span>How long does delivery take?</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
-            <div class="faq__a"><p>Programmes already on the register are typically delivered in
-               two to five working days once branding details are confirmed. New development is
-               quoted per scope, and we give you a date we can actually hold to.</p></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section cta-band">
-      <div class="wrap wrap--narrow cta-band__inner text-center">
-        <h2>Start with the register</h2>
-        <p style="margin-inline:auto">Check whether we already hold what you need — it takes
-           about ten seconds.</p>
-        <div class="btn-row" style="justify-content:center;margin-top:var(--sp-5)">
-          <a class="btn btn--accent btn--wide" href="materials.html">
-            Search 252 programmes</a>
-          <a class="btn btn--ghost-light btn--wide" href="https://wa.me/27847624831" data-wa rel="noopener" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2.5c-5.24 0-9.5 4.26-9.5 9.5 0 1.68.44 3.32 1.28 4.77L2.5 21.5l4.86-1.27a9.46 9.46 0 0 0 4.68 1.22h.01c5.23 0 9.49-4.26 9.49-9.5s-4.26-9.45-9.5-9.45zm0 17.4h-.01a7.9 7.9 0 0 1-4.02-1.1l-.29-.17-2.98.78.8-2.9-.19-.3a7.87 7.87 0 0 1-1.21-4.21c0-4.36 3.55-7.9 7.91-7.9a7.85 7.85 0 0 1 5.58 2.32 7.83 7.83 0 0 1 2.31 5.59c0 4.36-3.55 7.89-7.9 7.89z"/></svg><span>WhatsApp us</span></a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="wrap">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <img src="assets/img/logo-full-light.png"
-               srcset="assets/img/logo-full-light.png 1x, assets/img/logo-full-light@2x.png 2x"
-               alt="Level Nexus" width="361" height="120" loading="lazy">
-          <p>QCTO-aligned and legacy learning material, plus accreditation support for
-             Skills Development Providers. Based in KwaZulu-Natal, delivering nationwide.</p>
-          <ul class="social">
-            <li><a href="#" aria-label="Level Nexus on LinkedIn (coming soon)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.2 8.8H3.1V21h3.1zM4.65 3a1.8 1.8 0 1 0 0 3.6 1.8 1.8 0 0 0 0-3.6M21 13.9c0-3.2-1.7-4.7-4-4.7-1.85 0-2.7 1.02-3.16 1.73V8.8h-3.1c.04.88 0 12.2 0 12.2h3.1v-6.8c0-.28.02-.56.1-.76.23-.56.74-1.14 1.6-1.14 1.13 0 1.58.86 1.58 2.12V21H21z"/></svg></a></li>
-            <li><a href="#" aria-label="Level Nexus on Facebook (coming soon)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14.2 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5H17.4V3.6c-.3-.04-1.3-.13-2.47-.13-2.44 0-4.1 1.5-4.1 4.23V9.9H8.1V13h2.73v8z"/></svg></a></li>
-            <li><a href="https://wa.me/27847624831" data-wa rel="noopener" target="_blank"
-                   aria-label="Level Nexus on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2.5c-5.24 0-9.5 4.26-9.5 9.5 0 1.68.44 3.32 1.28 4.77L2.5 21.5l4.86-1.27a9.46 9.46 0 0 0 4.68 1.22h.01c5.23 0 9.49-4.26 9.49-9.5s-4.26-9.45-9.5-9.45zm0 17.4h-.01a7.9 7.9 0 0 1-4.02-1.1l-.29-.17-2.98.78.8-2.9-.19-.3a7.87 7.87 0 0 1-1.21-4.21c0-4.36 3.55-7.9 7.91-7.9a7.85 7.85 0 0 1 5.58 2.32 7.83 7.83 0 0 1 2.31 5.59c0 4.36-3.55 7.89-7.9 7.89z"/></svg></a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 class="footer-col__title">Sitemap</h2>
-          <ul class="footer-list">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="materials.html">Materials Register</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 class="footer-col__title">Browse by sector</h2>
-          <ul class="footer-list">
-            <li><a href="materials.html?sector=Health%20%26%20Safety">Health &amp; Safety</a></li>
-            <li><a href="materials.html?sector=Mining%20%26%20Minerals">Mining &amp; Minerals</a></li>
-            <li><a href="materials.html?sector=Construction%20%26%20Built%20Environment">Construction</a></li>
-            <li><a href="materials.html?sector=ICT%20%26%20Digital">ICT &amp; Digital</a></li>
-            <li><a href="materials.html?sector=Transport%20%26%20Logistics">Transport &amp; Logistics</a></li>
-            <li><a href="materials.html">All 16 sectors</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 class="footer-col__title">Contact</h2>
-          <ul class="footer-contact">
-            <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2.5c-5.24 0-9.5 4.26-9.5 9.5 0 1.68.44 3.32 1.28 4.77L2.5 21.5l4.86-1.27a9.46 9.46 0 0 0 4.68 1.22h.01c5.23 0 9.49-4.26 9.49-9.5s-4.26-9.45-9.5-9.45zm0 17.4h-.01a7.9 7.9 0 0 1-4.02-1.1l-.29-.17-2.98.78.8-2.9-.19-.3a7.87 7.87 0 0 1-1.21-4.21c0-4.36 3.55-7.9 7.91-7.9a7.85 7.85 0 0 1 5.58 2.32 7.83 7.83 0 0 1 2.31 5.59c0 4.36-3.55 7.89-7.9 7.89z"/></svg><span><strong>WhatsApp</strong>
-              <a href="https://wa.me/27847624831" data-wa rel="noopener" target="_blank">+27 84 762 4831</a></span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 6.5 9 6 9-6"/></svg><span><strong>Email</strong>
-              <a href="mailto:info@levelnexus.co.za">info@levelnexus.co.za</a></span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10.4c0 5.4-8 12.1-8 12.1s-8-6.7-8-12.1a8 8 0 1 1 16 0z"/><circle cx="12" cy="10.2" r="2.9"/></svg><span><strong>Based in</strong>
-              KwaZulu-Natal, South Africa</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M12 6.8V12l3.4 2"/></svg><span><strong>Hours</strong>
-              Mon–Fri, 08:00–17:00 SAST</span></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <div class="wrap footer-bottom__inner">
-        <p style="margin:0">© <span data-year>2026</span> Level Nexus. All rights reserved.</p>
-        <ul class="footer-bottom__links">
-          <li><a href="materials.html">Materials Register</a></li>
-          <li><a href="contact.html">Request a quote</a></li>
-          <li><a href="#top">Back to top</a></li>
-        </ul>
-      </div>
-    </div>
-  </footer>
-
-  <div class="action-bar">
-    <a class="btn btn--whatsapp" href="https://wa.me/27847624831" data-wa rel="noopener" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2.5c-5.24 0-9.5 4.26-9.5 9.5 0 1.68.44 3.32 1.28 4.77L2.5 21.5l4.86-1.27a9.46 9.46 0 0 0 4.68 1.22h.01c5.23 0 9.49-4.26 9.49-9.5s-4.26-9.45-9.5-9.45zm0 17.4h-.01a7.9 7.9 0 0 1-4.02-1.1l-.29-.17-2.98.78.8-2.9-.19-.3a7.87 7.87 0 0 1-1.21-4.21c0-4.36 3.55-7.9 7.91-7.9a7.85 7.85 0 0 1 5.58 2.32 7.83 7.83 0 0 1 2.31 5.59c0 4.36-3.55 7.89-7.9 7.89z"/></svg><span>WhatsApp</span></a>
-    <a class="btn btn--primary" href="contact.html">Get a quote</a>
+<div class="util">
+  <div class="container">
+    <span>Enquiries: <a href="tel:+27847624831">+27 84 762 4831</a></span>
+    <span><a href="contact.html">Request a quote</a><span class="sep">|</span><a href="https://wa.me/27847624831" data-wa rel="noopener" target="_blank">WhatsApp</a></span>
   </div>
+</div>
 
-  <script src="js/config.js"></script>
-  <script src="data/materials.js"></script>
-  <script src="js/nav.js"></script>
-  <script src="js/ui.js"></script>
-  <script src="js/hero-register.js"></script>
-  <script src="js/register.js"></script>
-  <script src="js/forms.js"></script>
-  <script src="js/main.js"></script>
+<header class="site-header">
+  <div class="container nav-row">
+    <a class="logo" href="index.html" aria-label="Level Nexus — home">
+      <img src="assets/img/logo-mark-sm.png" alt="" width="256" height="256">
+      <span class="wm"><b>Level Nexus</b><i>Creating Possibilities</i></span>
+    </a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span class="menu-toggle__bars" aria-hidden="true"><i></i><i></i><i></i></span></button>
+
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <div class="panel-head">
+        <a class="panel-title" href="index.html">Level Nexus</a>
+        <a class="panel-tel" href="tel:+27847624831">+27 84 762 4831</a>
+      </div>
+      <ul>
+        <li><a href="index.html" data-nav>Home</a></li>
+        <li class="has-dd">
+          <a class="dd-parent" href="materials.html" data-nav aria-haspopup="true" aria-expanded="false">Materials Register <svg class="car" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg></a>
+          <div class="dd">
+            <a class="dd-back" href="#">‹ Back</a>
+            <h6>Materials Register</h6>
+            <a href="materials.html">Browse all programmes<b>252</b></a>
+            <h6>By sector</h6>
+            <a href="materials.html?sector=Business%20%26%20Finance">Business &amp; Finance<b>39</b></a><a href="materials.html?sector=Health%20%26%20Safety">Health &amp; Safety<b>27</b></a><a href="materials.html?sector=ICT%20%26%20Digital">ICT &amp; Digital<b>23</b></a><a href="materials.html?sector=Mining%20%26%20Minerals">Mining &amp; Minerals<b>21</b></a><a href="materials.html?sector=Transport%20%26%20Logistics">Transport &amp; Logistics<b>20</b></a><a href="materials.html?sector=Construction%20%26%20Built%20Environment">Construction &amp; Built Environment<b>19</b></a>
+            <a href="materials.html">All 16 sectors →</a>
+          </div>
+        </li>
+        <li class="has-dd">
+          <a class="dd-parent" href="services.html" data-nav aria-current="page" aria-haspopup="true" aria-expanded="false">Services <svg class="car" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg></a>
+          <div class="dd">
+            <a class="dd-back" href="#">‹ Back</a>
+            <h6>What we do</h6>
+            <a href="services.html">All services</a>
+            <a href="services.html#qcto-material">QCTO-aligned learning material</a>
+            <a href="services.html#accreditation">Accreditation support</a>
+            <a href="services.html#skills-legacy">Skills programmes &amp; legacy</a>
+            <a href="services.html#customisation">Customisation &amp; development</a>
+          </div>
+        </li>
+        <li><a href="platform.html" data-nav>Platform</a></li>
+        <li><a href="about.html" data-nav>About</a></li>
+        <li class="nav-cta"><a class="btn" href="contact.html" data-nav>Get a quote</a></li>
+      </ul>
+      <div class="panel-foot">
+        <a class="btn wa" href="https://wa.me/27847624831" data-wa rel="noopener" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2.5c-5.24 0-9.5 4.26-9.5 9.5 0 1.68.44 3.32 1.28 4.77L2.5 21.5l4.86-1.27a9.46 9.46 0 0 0 4.68 1.22h.01c5.23 0 9.49-4.26 9.49-9.5s-4.26-9.45-9.5-9.45zm0 17.4h-.01a7.9 7.9 0 0 1-4.02-1.1l-.29-.17-2.98.78.8-2.9-.19-.3a7.87 7.87 0 0 1-1.21-4.21c0-4.36 3.55-7.9 7.91-7.9a7.85 7.85 0 0 1 5.58 2.32 7.83 7.83 0 0 1 2.31 5.59c0 4.36-3.55 7.89-7.9 7.89z"/></svg><span>Chat on WhatsApp</span></a>
+        <a class="mail" href="mailto:levelnexus@outlook.com">levelnexus@outlook.com</a>
+      </div>
+      <button class="panel-close" type="button"><span aria-hidden="true">×</span> Close panel</button>
+    </nav>
+    <div class="scrim" aria-hidden="true"></div>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero sm">
+  <span class="hero-shape s1" aria-hidden="true"></span>
+  <span class="hero-shape s3" aria-hidden="true"></span>
+  <span class="hero-bg" aria-hidden="true"><img src="assets/img/photos/tiles-navy.jpg" alt="" width="1536" height="1024"></span>
+  <div class="container">
+    <ol class="crumbs"><li><a href="index.html">Home</a></li><li aria-current="page">Services</li></ol>
+    <h1>Services</h1>
+    <p>Learning material, accreditation support, and the documentation that goes with both. Built for Skills Development Providers who need to be delivering, not drafting.</p>
+  </div>
+  <span class="tri" aria-hidden="true"></span>
+</section>
+
+<section class="section">
+  <div class="container svc-list">
+    <article class="svc rv" id="qcto-material" style="--accent:var(--navy);--accent-soft:rgba(21,58,119,.30)">
+      <div>
+        <span class="svc__no">01</span>
+        <h3>QCTO-aligned learning material</h3>
+        <p>A complete, curriculum-mapped material set for the occupational qualification you're registered against. Supplied editable, so it goes out under your brand.</p>
+      </div>
+      <ul class="svc__list"><li>Learner guides and facilitator guides per knowledge module</li><li>Practical skills workbooks and simulated workplace activities</li><li>Work experience logbooks and workplace mentor packs</li><li>Formative and summative assessment instruments with memoranda</li><li>Alignment matrix mapping content to the QCTO curriculum document</li><li>Drawn from <span data-count="qcto">155</span> occupational qualifications already on file</li></ul>
+    </article>
+    <article class="svc rv" id="accreditation" style="--accent:var(--amber);--accent-soft:rgba(254,154,54,.40)">
+      <div>
+        <span class="svc__no">02</span>
+        <h3>Accreditation support for providers</h3>
+        <p>Most applications stall on documentation, not capability. We work through the file with you until it's defensible.</p>
+      </div>
+      <ul class="svc__list"><li>Gap analysis against QCTO and SETA accreditation criteria</li><li>Quality Management System documentation and policy set</li><li>Assessor and moderator appointment records and matrices</li><li>Site and facility readiness against programme requirements</li><li>Evidence file assembly and pre-submission review</li><li>Support through evaluator queries and site visits</li></ul>
+    </article>
+    <article class="svc rv" id="skills-legacy" style="--accent:var(--teal-2);--accent-soft:rgba(15,211,196,.40)">
+      <div>
+        <span class="svc__no">03</span>
+        <h3>Skills programmes and legacy material</h3>
+        <p>Short, fundable programmes that fill a training calendar and give learners a credential without a full qualification cycle.</p>
+      </div>
+      <ul class="svc__list"><li><span data-count="sp">81</span> SP-coded skills programmes across every major sector</li><li>MQA mining programmes including underground hard rock</li><li>Legacy unit-standard-based material still in demand by employers</li><li>First aid, OHS representative and evacuation programme sets</li><li>Foundational learning and end user computing material</li><li>Ideal for discretionary grant and SETA-funded intakes</li></ul>
+    </article>
+    <article class="svc rv" id="customisation" style="--accent:var(--sector-mining, #7A5B2E);--accent-soft:rgba(122,91,46,.35)">
+      <div>
+        <span class="svc__no">04</span>
+        <h3>Customisation, branding and development</h3>
+        <p>For when the register doesn't have what you need, or what you already have needs to go out under your name.</p>
+      </div>
+      <ul class="svc__list"><li>Full rebrand to your identity: cover, colour, typography, footer</li><li>Content adaptation to your delivery model and learner profile</li><li>New material development against a curriculum document</li><li>Translation and plain-language simplification</li><li>Print-ready artwork and bulk print coordination</li><li>Version control and update service as curricula are revised</li></ul>
+    </article>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head rv">
+      <span class="eyebrow">Where each programme sits</span>
+      <h2>Occupational qualifications, skills programmes and legacy material</h2>
+      <p class="lead">The register covers all three, and the documentation that comes with them is the same set either way.</p>
+    </div>
+    <div class="gallery" role="group" aria-label="Programme types and progression" tabindex="0">
+      <figure class="rv">
+        <div class="photo"><img src="assets/img/graphics/gr-pathway.jpg" alt="Diagram of ascending planes representing programme progression" loading="lazy" width="1536" height="1024"></div>
+        <figcaption><b>Three types of programme</b>QCTO-aligned occupational qualifications, SP-coded skills programmes, and the legacy unit-standard material employers still ask for by name.</figcaption>
+      </figure>
+      <figure class="rv">
+        <div class="photo"><img src="assets/img/photos/ph-accreditation-session.jpg" alt="Three people working through an open accreditation evidence file" loading="lazy" width="1536" height="1024"></div>
+        <figcaption><b>Working the file with you</b>Gap analysis, evidence assembly and pre-submission review, worked through alongside your team.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head rv">
+      <span class="eyebrow">Behind the paperwork</span>
+      <h2>What we actually hand over</h2>
+      <p class="lead">Three parts of the job that come up on almost every order.</p>
+    </div>
+    <div class="gallery three" role="group" aria-roledescription="carousel" aria-label="What we hand over" tabindex="0">
+      <figure class="rv">
+        <div class="photo"><img src="assets/img/photos/evidence-files.jpg" alt="Lever arch files and a ring binder of provider evidence on a desk" loading="lazy" width="1536" height="1024"></div>
+        <figcaption><b>An accreditation file that holds</b>QMS documentation, assessor and moderator records, and the evidence set, assembled and pre-reviewed before you submit.</figcaption>
+      </figure>
+      <figure class="rv">
+        <div class="photo"><img src="assets/img/photos/branding-print.jpg" alt="Print studio desk with colour swatch fans and navy, teal and orange brand books" loading="lazy" width="1536" height="1024"></div>
+        <figcaption><b>Material that carries your identity</b>Cover, colour, typography and footer rebuilt around your brand, supplied editable and print-ready.</figcaption>
+      </figure>
+      <figure class="rv">
+        <div class="photo"><img src="assets/img/photos/desk-collaboration.jpg" alt="Notebook, pen, laptop and coffee on a desk" loading="lazy" width="1536" height="1024"></div>
+        <figcaption><b>An answer the same day</b>Send the codes and get back availability, lead time and price, usually within the working day.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Process: a genuine sequence, so the numbering carries information -->
+<section class="section dark">
+  <div class="container">
+    <div class="section-head rv">
+      <span class="eyebrow">How an order runs</span>
+      <h2>What happens after you send the codes</h2>
+    </div>
+    <div class="steps">
+      <div class="step rv"><h3>Send the codes</h3><p>WhatsApp or email the SAQA IDs, SP codes or qualification titles you need. No form-filling required to get an answer.</p></div>
+      <div class="step rv"><h3>You get a quote</h3><p>You hear what is on file, what needs developing, the lead time and the price. Usually the same working day.</p></div>
+      <div class="step rv"><h3>Review a sample</h3><p>You see a sample section before you commit, so you know exactly what lands in your inbox.</p></div>
+      <div class="step rv"><h3>Delivery and support</h3><p>Material arrives branded and editable. We stay reachable through your accreditation application and site visit.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:860px">
+    <span class="eyebrow amber">FAQ</span>
+    <h2 style="margin-bottom:32px">Questions providers ask us</h2>
+    <div class="faq">
+        <div class="faq__item">
+          <button class="faq__q" type="button"><span>Does buying material make us accredited?</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+          <div class="faq__a"><p>No, and anyone who tells you otherwise is selling you something. Accreditation is granted to your organisation by the QCTO or the relevant SETA after they assess your capacity, systems, staff and facilities. Material is one required piece of that file. Service 02 above is where we help with the rest.</p></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q" type="button"><span>Can we put our own logo on it?</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+          <div class="faq__a"><p>Yes. Material is supplied in editable format and we brand it to your identity before delivery at no extra cost. Learners, assessors and evaluators see your organisation throughout.</p></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q" type="button"><span>What if our qualification is not in the register?</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+          <div class="faq__a"><p>Send us the SAQA ID anyway. The register lists what is already developed; it isn't the limit of what we can do. If a curriculum document exists we can quote on developing it, and we will say plainly if the timeline does not suit you.</p></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q" type="button"><span>Do you work outside KwaZulu-Natal?</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+          <div class="faq__a"><p>We are based in KZN and work with providers in all nine provinces. Material is delivered digitally, and accreditation support runs over video call, email and WhatsApp, the same way it would run with a consultant down the road from you.</p></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q" type="button"><span>How long does delivery take?</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+          <div class="faq__a"><p>Programmes already on the register are typically delivered in two to five working days once branding details are confirmed. New development is quoted per scope, and we give you a date we can actually hold to.</p></div>
+        </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta section">
+  <div class="container rv">
+    <h2>Start with the register</h2>
+    <p>Check whether we already hold what you need. It takes about ten seconds.</p>
+    <div class="btn-row"><a class="btn amber" href="materials.html"><span>Search <span data-count="materials">252</span> programmes</span></a><a class="btn line-light" href="https://wa.me/27847624831" data-wa rel="noopener" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2.5c-5.24 0-9.5 4.26-9.5 9.5 0 1.68.44 3.32 1.28 4.77L2.5 21.5l4.86-1.27a9.46 9.46 0 0 0 4.68 1.22h.01c5.23 0 9.49-4.26 9.49-9.5s-4.26-9.45-9.5-9.45zm0 17.4h-.01a7.9 7.9 0 0 1-4.02-1.1l-.29-.17-2.98.78.8-2.9-.19-.3a7.87 7.87 0 0 1-1.21-4.21c0-4.36 3.55-7.9 7.91-7.9a7.85 7.85 0 0 1 5.58 2.32 7.83 7.83 0 0 1 2.31 5.59c0 4.36-3.55 7.89-7.9 7.89z"/></svg><span>WhatsApp us</span></a></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="fgrid">
+      <div class="fbrand">
+        <a class="flogo" href="index.html" aria-label="Level Nexus home"><span class="disc"><img src="assets/img/logo-mark-sm.png" alt="" width="256" height="256"></span><span class="wm"><b>Level Nexus</b><i>Creating Possibilities</i></span></a>
+        <p>QCTO-aligned and legacy learning material, plus accreditation support for Skills Development Providers. Based in KwaZulu-Natal, delivering nationwide.</p>
+        <div class="social">
+          <a href="#" aria-label="Level Nexus on LinkedIn (coming soon)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.2 8.8H3.1V21h3.1zM4.65 3a1.8 1.8 0 1 0 0 3.6 1.8 1.8 0 0 0 0-3.6M21 13.9c0-3.2-1.7-4.7-4-4.7-1.85 0-2.7 1.02-3.16 1.73V8.8h-3.1c.04.88 0 12.2 0 12.2h3.1v-6.8c0-.28.02-.56.1-.76.23-.56.74-1.14 1.6-1.14 1.13 0 1.58.86 1.58 2.12V21H21z"/></svg></a>
+          <a href="https://www.facebook.com/profile.php?id=61581938459125" rel="noopener" target="_blank" aria-label="Level Nexus on Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14.2 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5H17.4V3.6c-.3-.04-1.3-.13-2.47-.13-2.44 0-4.1 1.5-4.1 4.23V9.9H8.1V13h2.73v8z"/></svg></a>
+          <a href="https://wa.me/27847624831" data-wa rel="noopener" target="_blank" aria-label="Level Nexus on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2.5c-5.24 0-9.5 4.26-9.5 9.5 0 1.68.44 3.32 1.28 4.77L2.5 21.5l4.86-1.27a9.46 9.46 0 0 0 4.68 1.22h.01c5.23 0 9.49-4.26 9.49-9.5s-4.26-9.45-9.5-9.45zm0 17.4h-.01a7.9 7.9 0 0 1-4.02-1.1l-.29-.17-2.98.78.8-2.9-.19-.3a7.87 7.87 0 0 1-1.21-4.21c0-4.36 3.55-7.9 7.91-7.9a7.85 7.85 0 0 1 5.58 2.32 7.83 7.83 0 0 1 2.31 5.59c0 4.36-3.55 7.89-7.9 7.89z"/></svg></a>
+        </div>
+      </div>
+      <div class="fcol fcol--nav">
+        <h5>Sitemap</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="materials.html">Materials Register</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="platform.html">Nexus Learn platform</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="fcol fcol--nav">
+        <h5>Browse by sector</h5>
+        <ul>
+          <li><a href="materials.html?sector=Health%20%26%20Safety">Health &amp; Safety</a></li><li><a href="materials.html?sector=ICT%20%26%20Digital">ICT &amp; Digital</a></li><li><a href="materials.html?sector=Mining%20%26%20Minerals">Mining &amp; Minerals</a></li><li><a href="materials.html?sector=Transport%20%26%20Logistics">Transport &amp; Logistics</a></li><li><a href="materials.html?sector=Construction%20%26%20Built%20Environment">Construction</a></li>
+          <li><a href="materials.html">All 16 sectors</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul class="fcontact">
+          <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2.5c-5.24 0-9.5 4.26-9.5 9.5 0 1.68.44 3.32 1.28 4.77L2.5 21.5l4.86-1.27a9.46 9.46 0 0 0 4.68 1.22h.01c5.23 0 9.49-4.26 9.49-9.5s-4.26-9.45-9.5-9.45zm0 17.4h-.01a7.9 7.9 0 0 1-4.02-1.1l-.29-.17-2.98.78.8-2.9-.19-.3a7.87 7.87 0 0 1-1.21-4.21c0-4.36 3.55-7.9 7.91-7.9a7.85 7.85 0 0 1 5.58 2.32 7.83 7.83 0 0 1 2.31 5.59c0 4.36-3.55 7.89-7.9 7.89z"/></svg><span><strong>WhatsApp</strong><a href="https://wa.me/27847624831" data-wa rel="noopener" target="_blank">+27 84 762 4831</a></span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 6.5 9 6 9-6"/></svg><span><strong>Email</strong><a href="mailto:levelnexus@outlook.com">levelnexus@outlook.com</a></span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10.4c0 5.4-8 12.1-8 12.1s-8-6.7-8-12.1a8 8 0 1 1 16 0z"/><circle cx="12" cy="10.2" r="2.9"/></svg><span><strong>Based in</strong>KwaZulu-Natal, South Africa</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M12 6.8V12l3.4 2"/></svg><span><strong>Hours</strong>Mon–Fri, 08:00–17:00 SAST</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container fpartner"><small>Technology partner</small><span class="fsv-tile"><img src="assets/img/partners/fsv-tech-light.png" alt="FSV Tech Consulting &amp; Services" width="900" height="615"></span><span><a href="https://fsv-tech.com" rel="noopener" target="_blank">fsv-tech.com</a> · <a href="mailto:info@fsv-tech.com">info@fsv-tech.com</a> · <a href="tel:+97451715119">+974 5171 5119</a></span></div>
+  <div class="container fbar">
+    <p>© <span data-year>2026</span> Level Nexus · Est. 2025 · Platform built with <a href="https://fsv-tech.com" rel="noopener" target="_blank">FSV Tech</a></p>
+    <ul>
+      <li class="dup"><a href="materials.html">Materials Register</a></li>
+      <li class="dup"><a href="contact.html">Request a quote</a></li>
+      <li><a href="#top">Back to top</a></li>
+    </ul>
+  </div>
+</footer>
+
+<div class="stickbar">
+  <a class="btn wa" href="https://wa.me/27847624831" data-wa rel="noopener" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2.5c-5.24 0-9.5 4.26-9.5 9.5 0 1.68.44 3.32 1.28 4.77L2.5 21.5l4.86-1.27a9.46 9.46 0 0 0 4.68 1.22h.01c5.23 0 9.49-4.26 9.49-9.5s-4.26-9.45-9.5-9.45zm0 17.4h-.01a7.9 7.9 0 0 1-4.02-1.1l-.29-.17-2.98.78.8-2.9-.19-.3a7.87 7.87 0 0 1-1.21-4.21c0-4.36 3.55-7.9 7.91-7.9a7.85 7.85 0 0 1 5.58 2.32 7.83 7.83 0 0 1 2.31 5.59c0 4.36-3.55 7.89-7.9 7.89z"/></svg><span>WhatsApp</span></a>
+  <a class="btn" href="contact.html">Get a quote</a>
+</div>
+<button class="totop" type="button" aria-label="Back to top" onclick="window.scrollTo({top:0})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5m-7 7 7-7 7 7"/></svg></button>
+
+<script src="js/config.js"></script>
+<script src="data/materials.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/hero-register.js"></script>
+<script src="js/register.js"></script>
+<script src="js/forms.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

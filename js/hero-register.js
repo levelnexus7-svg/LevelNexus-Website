@@ -50,7 +50,7 @@ window.LN.heroRegister = (function () {
     if (!slice.length) {
       el.results.innerHTML =
         '<li class="console__row"><span class="console__label">' +
-        'No match yet — keep typing.</span></li>';
+        'No match yet. Keep typing.</span></li>';
       return;
     }
 

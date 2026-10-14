@@ -9,28 +9,56 @@ window.LN.ui = (function () {
 
   var u = window.LN.util;
 
-  /** Fade sections in as they arrive. Skipped entirely for reduced motion. */
+  /** Fade sections in as they arrive. CSS only hides .rv when html.js-motion is set. */
   function initReveal() {
-    var items = u.$$('.reveal');
+    var items = u.$$('.rv');
     if (!items.length) return;
 
-    if (u.prefersReducedMotion() || !('IntersectionObserver' in window)) {
-      items.forEach(function (el) { el.classList.add('is-visible'); });
+    if (!document.documentElement.classList.contains('js-motion') || !('IntersectionObserver' in window)) {
+      items.forEach(function (el) { el.classList.add('in'); });
       return;
     }
 
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
-        entry.target.classList.add('is-visible');
+        entry.target.classList.add('in');
         io.unobserve(entry.target);
       });
     }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
 
     items.forEach(function (el, i) {
-      el.style.transitionDelay = Math.min(i % 4, 3) * 70 + 'ms';
+      el.style.setProperty('--d', Math.min(i % 4, 3) * 70 + 'ms');
       io.observe(el);
     });
+  }
+
+  /** Scroll progress bar, back-to-top, mobile action bar. */
+  function initFloating() {
+    var bar = u.$('.progress');
+    var top = u.$('.totop');
+    var stick = u.$('.stickbar');
+    if (!bar && !top && !stick) return;
+
+    var ticking = false;
+    function update() {
+      ticking = false;
+      var y = window.scrollY;
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      if (bar) bar.style.transform = 'scaleX(' + (max > 0 ? Math.min(y / max, 1) : 0) + ')';
+      if (top) top.classList.toggle('on', y > 600);
+      if (stick) stick.classList.toggle('on', y > 420);
+    }
+    window.addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
+    }, { passive: true });
+    update();
+
+    if (top) {
+      top.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: u.prefersReducedMotion() ? 'auto' : 'smooth' });
+      });
+    }
   }
 
   /** Progressive-enhancement accordion — answers stay readable without JS. */
@@ -112,6 +140,7 @@ window.LN.ui = (function () {
     initCounts();
     initSectorCloud();
     initReveal();
+    initFloating();
     initFaq();
   }
 

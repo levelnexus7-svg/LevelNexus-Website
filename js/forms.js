@@ -165,7 +165,7 @@ window.LN.forms = (function () {
         .then(function (res) {
           if (!res.ok) throw new Error('Request failed: ' + res.status);
           form.reset();
-          status(box, 'Thanks — your enquiry is in. We reply within one working day.');
+          status(box, 'Thanks, your enquiry is in. We usually reply the same working day.');
         })
         .catch(function () {
           status(box, 'That did not send. Please WhatsApp us on ' +

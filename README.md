@@ -11,45 +11,30 @@ it works. There is nothing to compile.
 
 ```
 level-nexus/
-├── index.html              Home — hero with the live register console
-├── materials.html          Materials Register — the searchable database
-├── services.html           Services + process + FAQ
-├── about.html              Company background
-├── contact.html            Enquiry form + contact details
-├── 404.html
-├── favicon.ico
-├── site.webmanifest
-├── robots.txt
-├── sitemap.xml
-│
+├── index.html · materials.html · services.html · about.html · platform.html · contact.html · 404.html
 ├── css/
-│   ├── base.css            Design tokens, reset, typography, layout, a11y
-│   ├── sectors.css         Sector accent colours (generated — see below)
-│   ├── components.css      Buttons, chips, cards, stats, forms, result rows
-│   ├── header.css          Sticky header, mobile drawer, mobile action bar
-│   ├── footer.css          Footer
-│   └── pages.css           Hero console, register page, services, about, contact
-│
-├── js/
-│   ├── config.js           Contact details + shared helpers  ← EDIT THIS FIRST
-│   ├── nav.js              Mobile drawer, focus trap, sticky header
-│   ├── ui.js               Scroll reveal, FAQ, WhatsApp links, live counts
-│   ├── hero-register.js    The self-driving homepage console
-│   ├── register.js         Search, filters, pagination, URL state
-│   ├── forms.js            Contact form validation  ← ADD YOUR ENDPOINT HERE
-│   └── main.js             Entry point
-│
-├── data/
-│   ├── materials.js        The register, as a script (used by the site)
-│   └── materials.json      The same data as JSON (for a future API/backend)
-│
-└── assets/
-    ├── img/                Logos, OG image
-    └── icons/              Favicons, apple-touch-icon, maskable icon
+│   ├── sectors.css         Sector accent colours (load first)
+│   ├── style.css           The whole design system — tokens, header, hero, cards, forms, footer
+│   └── platform.css        Platform page, photo/video frames, Facebook card
+├── js/                     config · nav · ui · hero-register · register · forms · main
+│                           + zoom.js (lightbox, index & platform) and facebook.js (index)
+├── data/                   materials.js (used by the site) + materials.json
+├── assets/
+│   ├── img/                logos, hero-mesh.svg, og-image.jpg, graphics/, photos/, partners/, platform/
+│   ├── icons/              favicons + apple-touch + maskable
+│   └── video/              crest-motion.mp4 (seamless hero-crest loop) + poster in img/graphics/
+├── build-logo-assets.py    Rebuilds the logo PNGs from assets/img/logo-source.jpg (numpy, run manually)
+├── CNAME · robots.txt · sitemap.xml · site.webmanifest · favicon.ico
+└── _dev/                   Local only — backups, probe harness, scratch captures, media staging.
+                            Excluded from the deployment zip; delete freely.
 ```
 
-CSS load order matters: `base` → `sectors` → `components` → `header` → `footer`
-→ `pages`. Later files assume the tokens defined in `base.css`.
+CSS load order: `sectors.css` → `style.css` → `platform.css`.
+
+`_dev/` holds nothing the site loads. `backups/` are pre-edit snapshots of the HTML/CSS/JS,
+`probes/` is the old headless-Chrome check harness, `scratch/` is throwaway capture scripts and
+screenshots, and `media-output/` is the raw AI-generation staging folder for the card photos and
+the crest video (all already optimised into `assets/`).
 
 ---
 
@@ -61,7 +46,7 @@ server. Each file here is still a self-contained module — it just registers
 itself on a shared `window.LN` namespace instead of using `import`/`export`.
 
 Every module exposes an `init()` that exits quietly if its markup is absent, so
-all five pages can load the identical set of scripts.
+all six pages can load the identical set of scripts.
 
 To switch to real ES modules later: change each IIFE to `export default`, change
 `main.js` to import them, and add `type="module"` to the script tag.
@@ -179,28 +164,40 @@ project for `27847624831` and update those fallbacks too.
 
 ## Design
 
-| Token | Value | Use |
-|---|---|---|
-| Navy | `#153A77` | Primary actions, links, headings on light |
-| Teal | `#0FD3C4` | Accent, focus rings, live indicators |
-| Amber | `#FE9A36` | Secondary accent, highlights, CTA |
-| Paper | `#F7F9FC` | Page background |
-| Ink | `#0B1F3F` | Hero, footer, page heads |
+Modelled on the King's College Doha redesign (utility bar, sticky header with
+dropdowns, diagonal-cut hero, glass pill buttons, gradient cards with corner
+triangles, slide-out mobile panel), re-coloured navy · teal · amber.
 
-Type: **Space Grotesk** display, **Inter** body, **JetBrains Mono** for codes,
-labels and data. Loaded from Google Fonts with `display=swap`.
+| Token | Value |
+|---|---|
+| Navy | `#153A77` |
+| Teal | `#0FD3C4` |
+| Amber | `#FE9A36` |
+| Ink | `#0B1F3F` |
 
-The signature element is the homepage console: it types real queries against the
-real dataset and renders genuine matches. It idles when scrolled out of view or
-when the tab is hidden, and renders a single static frame under
-`prefers-reduced-motion`.
+Type: **Montserrat** for text, **JetBrains Mono** for codes and labels.
 
-Monospace **code chips** are the recurring structural device — the register's
-real SAQA IDs and SP codes, styled consistently everywhere they appear. There is
-no decorative `01 / 02 / 03` numbering except on the Services process strip,
-where the steps genuinely are a sequence.
+### Corner treatment
 
----
+Card and panel surfaces are **diagonal-radius**, not uniformly rounded: two
+opposite corners are rounded and the other two stay square. Three tokens drive
+it in `css/style.css` — `--r-diag` (22px, large surfaces), `--r-diag-md` (16px,
+standard cards) and `--r-diag-sm` (12px, small surfaces). Each is written in
+TL/TR/BR/BL order, so `22px 0 22px 0` rounds top-left and bottom-right. Buttons,
+pills, chips, code badges and circular avatars deliberately stay at `999px` /
+`50%` — they are not part of the scheme.
+
+### Feature-card media and the crest loop
+
+The three homepage feature cards each carry a photograph under a diagonal brand
+wash (navy · teal · amber — `assets/img/photos/ph-card-*.jpg`), with the original
+card gradient retained underneath as the load-in fallback. The crest panel plays
+a 5.5s seamless line-art loop (`assets/video/crest-motion.mp4`; muted,
+`playsinline`, `loop`, opacity 0.34 desktop / 0.26 mobile) behind the static logo
+mark, which stays a crisp PNG and breathes on its own 9s animation. The wash and
+the loop are both gated by `prefers-reduced-motion`, and the video degrades to
+its poster frame (`assets/img/graphics/gr-crest-motion-poster.jpg`) plus the
+panel gradient if it cannot load.
 
 ## Accessibility
 
@@ -223,7 +220,9 @@ Verified in-browser rather than assumed:
 
 ## Deployment
 
-Upload the folder as-is. No build, no Node, no environment variables.
+Upload the folder as-is — no build, no Node, no environment variables. The only
+thing to leave behind is `_dev/`, which nothing in the site references; the
+handed-over zip already excludes it.
 
 Before going live, replace `https://www.levelnexus.co.za` with the real domain
 in `sitemap.xml`, `robots.txt`, and the `canonical` / `og:url` tags at the top

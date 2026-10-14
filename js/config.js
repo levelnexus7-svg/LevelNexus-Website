@@ -11,7 +11,7 @@ window.LN.config = {
   whatsappUrl: 'https://wa.me/27847624831',
   phoneDisplay: '+27 84 762 4831',
   phoneHref: 'tel:+27847624831',
-  email: 'info@levelnexus.co.za',
+  email: 'levelnexus@outlook.com',
   region: 'KwaZulu-Natal, South Africa',
   serviceArea: 'All nine provinces',
   hours: 'Mon–Fri, 08:00–17:00 SAST',

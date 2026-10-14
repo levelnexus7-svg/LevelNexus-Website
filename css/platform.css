@@ -1,0 +1,224 @@
+/* Nexus Learn showcase — additions only; uses tokens from style.css */
+.shot{border-radius:var(--r-diag-sm);overflow:hidden;background:#fff;border:1px solid var(--line);box-shadow:var(--sh-lg)}
+.shot::before{content:"";display:block;height:30px;background:var(--g100) radial-gradient(circle at 16px 15px,#FE9A36 4px,transparent 5px),radial-gradient(circle at 32px 15px,#0FD3C4 4px,transparent 5px),radial-gradient(circle at 48px 15px,#6B8AC4 4px,transparent 5px);background-repeat:no-repeat;border-bottom:1px solid var(--line)}
+.shot img{display:block;width:100%;height:auto}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.gallery figure{margin:0}
+.gallery figcaption{margin-top:14px;font-size:14px;color:var(--g600);line-height:1.55}
+.gallery figcaption b{display:block;color:var(--ink);font-size:16px;margin-bottom:2px}
+.vid{position:relative;border-radius:var(--r-diag);overflow:hidden;box-shadow:var(--sh-lg);background:#fff;border:1px solid var(--line)}
+.vid video{display:block;width:100%;height:auto}
+.pcards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.pcard{background:#fff;border:1px solid var(--line);border-radius:var(--r-diag-md);padding:28px;box-shadow:var(--sh-sm)}
+.pcard i{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:12px;background:var(--teal-100);color:var(--teal-700);font:700 14px var(--mono);font-style:normal;margin-bottom:16px}
+.pcard:nth-child(3n+2) i{background:var(--amber-100);color:var(--amber-700)}
+.pcard h3{font-size:19px;margin:0 0 8px}.pcard p{margin:0;color:var(--g600);font-size:15px}
+.partner{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.partner > div{background:#fff;border:1px solid var(--line);border-radius:var(--r-diag-md);padding:30px}
+.partner h3{margin:0 0 8px;font-size:20px}.partner p{margin:0 0 10px;color:var(--g600)}
+.partner a{font-weight:600}
+@media(max-width:900px){.gallery,.pcards,.partner{grid-template-columns:1fr}}
+.shot img{cursor:zoom-in;aspect-ratio:16/11;object-fit:cover;object-position:top left}
+.gallery{grid-template-columns:repeat(2,1fr);gap:34px}
+.split.wide-fig{grid-template-columns:.8fr 1.2fr}
+.vid{max-width:720px;margin-inline:auto}
+.lb{position:fixed;inset:0;z-index:999;background:rgba(6,20,43,.92);overflow:auto;padding:4vh 4vw;cursor:zoom-out}
+.lb img{display:block;margin:0 auto;max-width:min(1400px,100%);height:auto;border-radius:14px 0 14px 0;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.lb span{position:fixed;top:14px;right:22px;color:#fff;font:600 30px/1 var(--font)}
+.inc{display:grid;grid-template-columns:repeat(2,1fr);gap:10px 28px;margin:18px 0 0;padding:0;list-style:none}
+.inc li{padding-left:26px;position:relative;font-weight:500}
+.inc li::before{content:"";position:absolute;left:0;top:.5em;width:12px;height:12px;border-radius:50%;background:var(--teal)}
+@media(max-width:900px){.gallery,.inc{grid-template-columns:1fr}.split.wide-fig{grid-template-columns:1fr}}
+/* layered visual stack */
+.stack{position:relative;padding:0 0 12% 0}
+.stack .shot{width:84%}
+.stack .shot.b{position:absolute;right:0;bottom:0;width:50%;box-shadow:0 24px 50px rgba(6,20,43,.35)}
+.stack .shot.c{position:absolute;left:-3%;bottom:-2%;width:38%;box-shadow:0 24px 50px rgba(6,20,43,.35);z-index:2}
+.stack .shot.b img,.stack .shot.c img{aspect-ratio:4/3}
+.band{background:linear-gradient(135deg,#06142B 0%,#0F2D5E 60%,#0b5a63 130%);color:#fff;position:relative;overflow:hidden}
+.band::before{content:"";position:absolute;width:520px;height:520px;right:-140px;top:-180px;border-radius:50%;background:radial-gradient(circle,rgba(15,211,196,.28),transparent 68%)}
+.band .container{position:relative;z-index:2}
+.band-bg{position:absolute;inset:0;z-index:0;display:block}
+.band-bg img{display:block;width:100%;height:100%;object-fit:cover;opacity:.30;mix-blend-mode:screen}
+.band h2{color:#fff}.band .lead,.band p{color:#C9D6EA}.band .eyebrow{color:var(--teal)}
+.band .btn.ghost{color:#fff;border-color:rgba(255,255,255,.5)}
+.photo{border-radius:var(--r-diag);overflow:hidden;box-shadow:var(--sh-lg);border:1px solid var(--line);background:#06142B}
+.photo img{display:block;width:100%;height:auto}
+@media(max-width:900px){.stack .shot.c{display:none}.stack .shot{width:90%}.stack .shot.b{width:55%}}
+.split.rev.wide-fig{grid-template-columns:1.2fr .8fr}@media(max-width:900px){.split.rev.wide-fig{grid-template-columns:1fr}}
+/* ---- hero crest (animated logo) ---- */
+.hero-crest{position:relative;width:min(400px,84%);aspect-ratio:1;margin:0 auto;display:grid;place-items:center}
+.hero-crest .plate{position:absolute;inset:17%;border-radius:50%;background:radial-gradient(circle at 50% 40%,#fff 0%,#EAF3FF 72%,#D6E6FB 100%);box-shadow:0 0 90px rgba(15,211,196,.38),0 0 0 10px rgba(255,255,255,.06)}
+.hero-crest .ring{position:absolute;border-radius:50%}
+.hero-crest .r1{inset:3%;border:1.5px dashed rgba(15,211,196,.5)}
+.hero-crest .r2{inset:9%;border:1.5px solid rgba(254,154,54,.38)}
+.hero-crest .orbit{position:absolute;inset:3%;border-radius:50%}
+.hero-crest .orbit i{position:absolute;top:-6px;left:50%;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:var(--teal);box-shadow:0 0 14px 3px rgba(15,211,196,.7)}
+.hero-crest .o2{inset:9%}.hero-crest .o2 i{background:var(--amber);box-shadow:0 0 14px 3px rgba(254,154,54,.7);top:auto;bottom:-6px}
+.hero-crest img{position:relative;width:58%;height:auto;z-index:2}
+.fsv-tile{display:inline-flex;align-items:center;justify-content:center;min-width:170px;min-height:64px;padding:16px 26px;border-radius:14px;background:#0b0a09;border:1px solid rgba(255,255,255,.1)}
+.fsv-tile img{display:block;max-height:44px;width:auto}
+.fsv-tile b{color:#fff;font:700 24px var(--font);letter-spacing:.02em}
+.ptn{display:grid;grid-template-columns:auto 1fr;gap:34px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:var(--r-diag);padding:34px 38px;box-shadow:var(--sh-md)}
+.ptn h3{margin:0 0 6px;font-size:22px}.ptn p{margin:0 0 12px;color:var(--g600)}
+.ptn .meta{display:flex;flex-wrap:wrap;gap:6px 22px;font-weight:600;font-size:15px}
+.fpartner{display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px;padding:26px 0;border-top:1px solid rgba(255,255,255,.12)}
+.fpartner small{font:600 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--teal)}
+.fpartner span{color:#C9D6EA;font-size:14px}.fpartner a{color:#fff}
+.fpartner .fsv-tile{min-height:44px;padding:8px 18px;min-width:120px}.fpartner .fsv-tile img{max-height:28px}.fpartner .fsv-tile b{font-size:18px}
+@media(max-width:700px){.ptn{grid-template-columns:1fr;padding:26px}}
+@media (prefers-reduced-motion:no-preference){
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @keyframes spinr{to{transform:rotate(-360deg)}}
+  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+  @keyframes glow{0%,100%{box-shadow:0 0 70px rgba(15,211,196,.28),0 0 0 10px rgba(255,255,255,.06)}50%{box-shadow:0 0 120px rgba(254,154,54,.4),0 0 0 18px rgba(255,255,255,.03)}}
+  @keyframes shapeA{0%,100%{transform:translate3d(0,0,0) rotate(0)}50%{transform:translate3d(-34px,26px,0) rotate(4deg)}}
+  @keyframes shapeB{0%,100%{transform:translate3d(0,0,0) rotate(0) scale(1)}50%{transform:translate3d(26px,-30px,0) rotate(-6deg) scale(1.08)}}
+  @keyframes shapeC{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(40px,20px,0) rotate(5deg)}}
+  @keyframes wedgeL{0%,100%{clip-path:polygon(0 100%,100% 100%,0 0)}50%{clip-path:polygon(0 100%,100% 100%,0 34%)}}
+  @keyframes wedgeR{0%,100%{clip-path:polygon(100% 0,100% 100%,0 100%)}50%{clip-path:polygon(100% 40%,100% 100%,0 100%)}}
+  @keyframes sweep{0%{transform:translateX(-30%);opacity:0}30%,70%{opacity:.5}100%{transform:translateX(130%);opacity:0}}
+  .hero-crest .r1{animation:spin 40s linear infinite}.hero-crest .r2{animation:spinr 60s linear infinite}
+  .hero-crest .o1{animation:spin 16s linear infinite}.hero-crest .o2{animation:spinr 24s linear infinite}
+  .hero-crest img{animation:floaty 6s ease-in-out infinite}.hero-crest .plate{animation:glow 6s ease-in-out infinite}
+  .hero-shape.s1{animation:shapeA 18s ease-in-out infinite}
+  .hero-shape.s2{animation:shapeB 13s ease-in-out -4s infinite}
+  .hero-shape.s3{animation:shapeC 15s ease-in-out -8s infinite}
+  .hero::after{animation:wedgeL 14s ease-in-out infinite}.hero .tri{animation:wedgeR 11s ease-in-out -3s infinite}
+  .hero .container::after{content:"";position:absolute;left:0;top:30%;width:60%;height:1px;background:linear-gradient(90deg,transparent,rgba(15,211,196,.8),transparent);animation:sweep 9s ease-in-out infinite;pointer-events:none}
+}
+.fsv-tile{background:#fff;border:1px solid var(--line);padding:18px 28px}
+.fsv-tile img{max-height:96px;width:auto;height:auto}
+.fpartner .fsv-tile{background:transparent;border:0;padding:0;min-width:0;min-height:0}
+.fpartner .fsv-tile img{max-height:52px}
+
+.flogo{display:flex;align-items:center;gap:14px;margin-bottom:18px;text-decoration:none}
+.flogo .disc{width:64px;height:64px;border-radius:50%;background:#fff;display:grid;place-items:center;flex:none}
+.flogo .disc img{width:46px;height:46px;height:46px;margin:0}
+.flogo .wm{color:#fff}.flogo .wm b{color:#fff}.flogo .wm i{color:var(--teal)}
+
+/* ==========================================================================
+   PHOTOGRAPHY
+   New imagery for the site. Everything here reuses the existing tokens and
+   sits on top of .hero / .photo / .gallery from the block above.
+   ========================================================================== */
+
+/* --- hero background photograph ----------------------------------------- */
+/* Sits under the .hero::before legibility wash, so headline contrast is set
+   by that gradient rather than by the picture. */
+.hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.hero-bg img{display:block;width:100%;height:100%;object-fit:cover;object-position:62% 55%;opacity:.42}
+@media(max-width:900px){.hero-bg img{opacity:.24}}
+
+/* --- full-bleed image band --------------------------------------------- */
+.photo-band{position:relative;isolation:isolate;overflow:hidden;background:var(--ink);color:#fff}
+.photo-band__bg{position:absolute;inset:0;z-index:0;display:block}
+.photo-band__bg img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 62%}
+.photo-band::before{
+  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(100deg,rgba(6,20,43,.94) 0%,rgba(11,31,63,.80) 44%,rgba(11,31,63,.40) 100%);
+}
+.photo-band .container{position:relative;z-index:2;padding:clamp(56px,7vw,96px) 0}
+.photo-band h2{color:#fff;max-width:20em}
+.photo-band .lead,.photo-band p{color:#DCE7F7}
+.photo-band .eyebrow{color:var(--teal)}
+.photo-band .btn.ghost{color:#fff;border-color:rgba(255,255,255,.5)}
+.photo-band .btn.ghost:hover{border-color:var(--teal);color:#fff}
+.photo-band__credit{
+  display:block;margin-top:24px;font:500 11px var(--mono);
+  letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55);
+}
+
+/* --- three-across photo gallery ----------------------------------------- */
+.gallery.three{grid-template-columns:repeat(3,1fr)}
+.gallery .photo img{aspect-ratio:3/2;object-fit:cover}
+@media(max-width:1000px){.gallery.three{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.gallery.three{grid-template-columns:1fr}}
+
+/* --- standalone photograph with a caption (outside a .gallery) ---------- */
+.photo-figure{margin:22px 0 0}
+.photo-figure .photo img{aspect-ratio:3/2;object-fit:cover}
+.photo-figure figcaption{margin-top:12px;font-size:13px;color:var(--g600);line-height:1.5}
+@media(max-width:700px){.photo-figure .photo img{aspect-ratio:16/10}}
+
+/* ==========================================================================
+   PHONE LAYOUT
+   Photo galleries and the screenshot stack become touch-scrollable rails
+   instead of tall vertical stacks, so a listing of six screens costs one
+   screen of height instead of six.
+   ========================================================================== */
+@media (max-width: 760px) {
+  /* --- galleries: horizontal rail with a peeking next card -------------- */
+  .gallery, .gallery.three {
+    display: flex; flex-wrap: nowrap; gap: 14px;
+    overflow-x: auto; overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory; scroll-padding-inline: 0;
+    -webkit-overflow-scrolling: touch; scrollbar-width: none;
+    padding: 4px 0 22px;
+  }
+  .gallery::-webkit-scrollbar { display: none; }
+  .gallery > figure { flex: 0 0 78%; min-width: 0; scroll-snap-align: start; }
+  .gallery.three > figure { flex-basis: 82%; }
+  .gallery .photo img { aspect-ratio: 16 / 10; }
+  .gallery figcaption { margin-top: 10px; font-size: 13.5px; line-height: 1.5; }
+  .gallery figcaption b { font-size: 15px; }
+  .gallery:focus-visible { outline: 3px solid var(--navy); outline-offset: 3px; }
+
+  /* Rail items must not sit at opacity 0 waiting for a reveal that the
+     viewport-only observer may not fire for off-screen cards. */
+  .js-motion .gallery > figure, .js-motion .stack > .shot { opacity: 1; transform: none; }
+
+  /* --- app screenshots: rail, not a 12%-padded collage ------------------ */
+  .stack {
+    display: flex; flex-wrap: nowrap; gap: 12px; padding: 4px 0 20px;
+    overflow-x: auto; overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  }
+  .stack::-webkit-scrollbar { display: none; }
+  .stack .shot, .stack .shot.b, .stack .shot.c {
+    position: static; inset: auto; width: auto; flex: 0 0 84%;
+    scroll-snap-align: start; box-shadow: var(--sh-md);
+  }
+  .stack .shot.c { display: block; }
+
+  /* On a phone the rail follows the copy that explains it. */
+  .split.rev.wide-fig > .stack { order: 2; }
+
+  /* --- hero crest: decorative, so it shrinks hard ----------------------- */
+  .hero-crest { width: min(196px, 56%); }
+
+  /* --- platform feature cards ------------------------------------------ */
+  .pcards { gap: 12px; }
+  .pcard { padding: 18px; }
+  .pcard i { width: 34px; height: 34px; margin-bottom: 10px; font-size: 12.5px; border-radius: 10px; }
+  .pcard h3 { font-size: 17px; }
+  .pcard p { font-size: 14.5px; }
+
+  /* --- what arrives in a pack: two columns of short items -------------- */
+  .inc { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 16px; }
+  .inc li { padding-left: 20px; font-size: 14px; }
+  .inc li::before { width: 9px; height: 9px; }
+
+  /* --- partner blocks -------------------------------------------------- */
+  .partner > div { padding: 20px 18px; border-radius: 14px 0 14px 0; }
+  .ptn { padding: 20px 18px; gap: 18px; border-radius: 14px 0 14px 0; }
+  .ptn .meta { gap: 4px 16px; font-size: 14px; }
+  .fsv-tile { padding: 12px 18px; min-width: 0; }
+  .fsv-tile img { max-height: 52px; }
+
+  /* --- screenshot chrome ---------------------------------------------- */
+  .shot::before {
+    height: 20px;
+    background: var(--g100) radial-gradient(circle at 11px 10px, #FE9A36 3px, transparent 4px),
+                radial-gradient(circle at 23px 10px, #0FD3C4 3px, transparent 4px),
+                radial-gradient(circle at 35px 10px, #6B8AC4 3px, transparent 4px);
+    background-repeat: no-repeat;
+  }
+
+  /* --- full-bleed photo bands ----------------------------------------- */
+  .photo { border-radius: 14px 0 14px 0; }
+  .photo-band .container { padding: 34px 0; }
+  .photo-band__credit { margin-top: 14px; }
+  .photo-figure { margin-top: 16px; }
+  .photo-figure figcaption { margin-top: 10px; font-size: 12.5px; }
+}

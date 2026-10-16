@@ -1,0 +1,82 @@
+{
+  "business": {
+    "covers": "from bookkeeping, payroll and human resource administration to internal and public sector auditing, project management, procurement and real estate",
+    "audience": "providers training office, finance, HR and sales learners",
+    "q": "Do you have a business qualification that is not listed?"
+  },
+  "safety": {
+    "covers": "from emergency first aid, fire fighting and evacuation marshals to OHS representatives, incident investigators, risk assessors and scaffold erection",
+    "audience": "providers running compliance and site-safety courses for employers",
+    "q": "Do you have a health and safety programme that is not listed?"
+  },
+  "tech": {
+    "covers": "from end user computing and device repair to software development, data science, Python, robotic process automation and remotely piloted aircraft (drone) work",
+    "audience": "providers building digital skills from entry level to developer",
+    "q": "Do you have an ICT qualification that is not listed?"
+  },
+  "mining": {
+    "covers": "from rock drill, dump truck and face shovel operators to blasting assistants, ventilation observers and mine rescue workers, including MQA-coded programmes",
+    "audience": "providers supplying the mining sector, underground and surface",
+    "q": "Do you have a mining programme that is not listed?"
+  },
+  "transport": {
+    "covers": "from counterbalanced lift truck drivers (F1 to F4) and overhead and mobile crane operators to riggers, truck drivers, store persons and supply chain practitioners",
+    "audience": "providers training for warehouses, yards, freight and logistics",
+    "q": "Do you have a transport or logistics programme that is not listed?"
+  },
+  "construction": {
+    "covers": "from bricklaying, carpentry, plumbing and plastering to welding, boilermaking and construction plant operation",
+    "audience": "providers running trade and artisan training",
+    "q": "Do you have a construction trade that is not listed?"
+  },
+  "agriculture": {
+    "covers": "from livestock, poultry, aquaculture and mixed farming to forestry, chainsaw operation, nursery work and pest management",
+    "audience": "providers working with farms, forestry companies and land-based enterprises",
+    "q": "Do you have an agriculture programme that is not listed?"
+  },
+  "education": {
+    "covers": "from early childhood development and adult literacy to training and development practitioners, skills development facilitators and school management",
+    "audience": "providers training facilitators, educators and workplace trainers",
+    "q": "Do you have an education or training programme that is not listed?"
+  },
+  "mechanical": {
+    "covers": "from automotive motor mechanic, diesel fitter and heavy equipment mechanic to panel beating, metal machining and appliance repair",
+    "audience": "providers running workshop and mechanical trade training",
+    "q": "Do you have a mechanical or automotive qualification that is not listed?"
+  },
+  "beauty": {
+    "covers": "from hairdressing, barbering and beauty therapy to nail therapy, skincare, make-up and embalming",
+    "audience": "providers running salon, spa and personal care training",
+    "q": "Do you have a beauty or personal care qualification that is not listed?"
+  },
+  "community": {
+    "covers": "from child and youth care, community development and home-based care to social auxiliary work and counselling",
+    "audience": "providers training care and community workers",
+    "q": "Do you have a community or social services qualification that is not listed?"
+  },
+  "security": {
+    "covers": "from security officers, access control and patrol officers to close protection, field rangers and cyber security analysts",
+    "audience": "providers training physical and digital security staff",
+    "q": "Do you have a security qualification that is not listed?"
+  },
+  "hospitality": {
+    "covers": "from chef, food handler and kitchen hand to commercial cleaning, housekeeping and events organising",
+    "audience": "providers training for hotels, kitchens and facilities teams",
+    "q": "Do you have a hospitality or food qualification that is not listed?"
+  },
+  "manufacturing": {
+    "covers": "from abattoir and meat processing to chemical and water plant operation, garment pattern development and quality control",
+    "audience": "providers training process, plant and factory operators",
+    "q": "Do you have a manufacturing programme that is not listed?"
+  },
+  "electrical": {
+    "covers": "from electrician and electrician's assistant to solar photovoltaic installers, heat pump installation and millwright",
+    "audience": "providers running electrical and renewable energy training",
+    "q": "Do you have an electrical or energy qualification that is not listed?"
+  },
+  "general": {
+    "covers": "a single cross-sector qualification registered on SAQA under ID 230026",
+    "audience": "providers whose qualification does not sit neatly in one sector",
+    "q": "Do you have a cross-sector qualification that is not listed?"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "level-nexus-site",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "preview": "npx --yes serve dist"
+  }
+}

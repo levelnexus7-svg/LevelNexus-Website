@@ -1,0 +1,327 @@
+/* ==========================================================================
+   REFRESH (v9)
+   1. Platform manual band on a light surface
+   2. Colour-coded cards on the home page (same language as the Services blocks)
+   3. Materials Register restyled to the site's diagonal-corner system
+   4. "How an order runs" spacing
+   ========================================================================== */
+
+/* ---------------------------------------------------------------- 1. light band */
+.band--light { background: linear-gradient(180deg, var(--paper), #fff); color: var(--text); }
+.band--light::before, .band--light::after, .band--light .band-bg { display: none; }
+.band--light h2 { color: var(--ink); }
+.band--light .lead, .band--light p { color: var(--text); }
+.band--light .stack .shot { box-shadow: 0 24px 50px -18px rgba(11,31,63,.28), 0 0 0 1px var(--line); }
+.band--light .stack .shot.b, .band--light .stack .shot.c { box-shadow: 0 22px 44px -16px rgba(11,31,63,.32), 0 0 0 1px var(--line); backdrop-filter: none; }
+.band--light .manual { padding: 18px; background: #fff; border: 1px solid var(--line); border-left: 6px solid var(--amber); border-radius: var(--r-diag-md); box-shadow: var(--sh-sm); }
+.band--light .manual img { border-color: var(--line); }
+
+/* ---------------------------------------------------------------- 2. colour-coded home cards */
+.card--accent { --accent: var(--navy); --accent-soft: rgba(21,58,119,.30); --accent-ink: var(--navy); border-radius: var(--r-diag); background: linear-gradient(180deg, #fff, #F6F9FD); box-shadow: var(--sh-sm); transition: transform .25s var(--ease), box-shadow .25s, border-color .25s; }
+.card--accent::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 6px; background: var(--accent); z-index: 3; }
+.card--accent::after { content: ""; position: absolute; right: 0; bottom: 0; width: 84px; height: 84px; background: linear-gradient(135deg, rgba(0,0,0,0), var(--accent-soft)); clip-path: polygon(100% 0, 100% 100%, 0 100%); pointer-events: none; }
+a.card--accent:hover { border-color: var(--accent); box-shadow: var(--sh-md); transform: translateY(-3px); }
+.card--amber { --accent: var(--amber); --accent-soft: rgba(254,154,54,.40); --accent-ink: var(--amber-700); }
+.card--teal { --accent: var(--teal-2); --accent-soft: rgba(15,211,196,.40); --accent-ink: var(--teal-700); }
+.card--accent .body { padding-left: 30px; }
+.card__no { display: block; font-size: clamp(34px, 3.4vw, 48px); font-weight: 700; line-height: 1; letter-spacing: -.03em; color: var(--accent); margin-bottom: 10px; font-variant-numeric: tabular-nums; }
+.card--accent h3 { color: var(--navy); }
+.card--accent .more { color: var(--accent-ink); }
+.card--accent .more::after { content: " \2192"; }
+.card--accent .thumb { margin-left: 6px; }
+
+/* ---------------------------------------------------------------- 3. Materials Register */
+/* one shape everywhere: the site's diagonal corner */
+.reg-rail { background: #fff; border: 1px solid var(--line); border-left: 6px solid var(--navy); border-radius: var(--r-diag-md); box-shadow: var(--sh-sm); padding: 18px 12px 12px 14px; }
+.reg-rail__h { margin: 0 0 8px 10px; font: 700 12px var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--navy); }
+.reg-rail a { border-radius: var(--r-diag-sm); border-radius: 10px 0 10px 0; }
+.reg-rail a:hover { background: var(--g100); }
+
+.reg-search .input, .search.reg-search .input { border-radius: var(--r-diag-sm); font: 500 15px var(--font); min-height: 54px; box-shadow: var(--sh-sm); }
+.reg-search .search__icon { left: 18px; }
+.segs { border-radius: var(--r-diag-sm); padding: 4px; gap: 4px; box-shadow: var(--sh-sm); }
+.seg { border-radius: 8px 0 8px 0; }
+.reg-chips a { border-radius: 10px 0 10px 0 !important; }
+.add-btn { border-radius: 10px 0 10px 0; }
+.tchip { border-radius: 6px 0 6px 0; }
+.code-copy { border-radius: 8px 0 8px 0; }
+
+/* the list is a services-style block: accent bar, soft corner triangle */
+.reg-tablewrap { position: relative; border-radius: var(--r-diag); border-left: 0; background: linear-gradient(180deg, #fff, #F6F9FD); }
+.reg-tablewrap::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 6px; background: var(--navy); z-index: 3; }
+.reg-table th { background: transparent; padding-left: 20px; }
+.reg-table th:first-child { padding-left: 28px; }
+.reg-table td:first-child { padding-left: 28px; }
+/* colour-code each row by programme type, as the Services page does by service */
+.reg-table tbody tr td:first-child { box-shadow: inset 4px 0 0 var(--row, transparent); }
+.reg-table tbody tr[data-type="QCTO"] { --row: var(--navy); }
+.reg-table tbody tr[data-type="SP"] { --row: var(--teal-2); }
+.reg-table tbody tr[data-type="MQA"] { --row: var(--amber); }
+.reg-table tbody tr[data-type="CORE"] { --row: var(--g200); }
+.reg-table td:first-child { position: relative; }
+.reg-table tbody tr:hover td { background: rgba(15,211,196,.06); }
+.reg-count { margin-left: 0; }
+.register-note { margin-top: 22px; padding: 18px 22px; background: #fff; border: 1px solid var(--line); border-left: 6px solid var(--amber); border-radius: var(--r-diag-md); }
+
+/* ---------------------------------------------------------------- 4. How an order runs */
+.dark .steps { gap: 24px; margin-top: 8px; align-items: stretch; }
+.dark .step { display: flex; flex-direction: column; padding: 28px 24px 30px; }
+.dark .step::before { flex: none; margin-bottom: 20px; }
+.dark .step h3 { font-size: 19px; margin: 0 0 10px; }
+.dark .step p { font-size: 15px; line-height: 1.6; color: #D5E1F3; }
+@media (max-width: 1100px) { .dark .steps { gap: 20px; } }
+@media (max-width: 980px) {
+  .dark .steps { gap: 12px; }
+  .dark .step { display: grid; padding: 16px 18px; }
+  .dark .step::before { margin-bottom: 0; }
+  .dark .step h3 { margin: 0 0 4px; font-size: 16.5px; }
+  .dark .step p { font-size: 14px; }
+}
+
+/* v9 fixes after visual check */
+.band--light .manual b { color: var(--ink); }
+.reg-tablewrap::before { display: none; }
+.reg-table tbody tr td:first-child { box-shadow: inset 5px 0 0 var(--row, transparent); }
+.reg-table th:first-child, .reg-table td:first-child { padding-left: 26px; }
+.add-btn { border-color: var(--g200); color: var(--navy); background: #fff; }
+.add-btn:hover { border-color: var(--navy); }
+.add-btn.is-on { border-color: var(--teal-2); }
+@media (max-width: 720px) {
+  .reg-table tbody tr td:first-child { box-shadow: none; padding-left: 0; }
+  .reg-table tbody tr { box-shadow: inset 5px 0 0 var(--row, transparent); padding-left: 22px; }
+  .reg-table tbody tr:hover td { background: none; }
+}
+
+/* ---------------------------------------------------------------- Register on small screens
+   Two compact dropdowns (sector + type) replace the scrolling chip row and the wrapping type pills. */
+.reg-tools .reg-type-select { display: none; }
+@media (max-width: 960px) {
+  .reg-tools { gap: 10px; }
+  .reg-tools .reg-search { flex: 1 1 100%; }
+  .reg-tools .reg-search .input { min-height: 50px; }
+  .reg-tools .reg-chips, .reg-tools .segs { display: none; }
+  .reg-tools .reg-sector-select, .reg-tools .reg-type-select {
+    display: block; flex: 1 1 calc(50% - 5px); min-width: 0; min-height: 48px; font: 600 14px var(--font);
+    padding-left: 14px; padding-right: 36px; background-position: right 12px center; text-overflow: ellipsis;
+    background-color: #fff; border-radius: var(--r-diag-sm); box-shadow: var(--sh-sm);
+  }
+  .reg-tools .reg-type-select:only-of-type { flex-basis: 100%; }
+  .reg-count { margin: 2px 2px 10px; }
+  .page-head--tool .container { padding: 30px 0 64px; }
+  .page-head--tool p { font-size: 15.5px; line-height: 1.55; }
+}
+@media (max-width: 720px) {
+  /* compact programme cards: title + add button, then code / type / sector on one line */
+  .reg-tablewrap { border-radius: var(--r-diag-md); }
+  .reg-table tbody tr {
+    grid-template-columns: auto auto minmax(0, 1fr) auto; gap: 3px 10px; padding: 12px 12px 12px 20px; align-items: center;
+  }
+  .reg-table .c-title { grid-column: 1 / 4; grid-row: 1; }
+  .reg-table .c-title .t { font-size: 15.5px; }
+  .reg-table .c-add { grid-column: 4; grid-row: 1 / span 2; }
+  .reg-table .c-code { grid-column: 1; grid-row: 2; margin-top: 4px; }
+  .reg-table .c-type { grid-column: 2; grid-row: 2; justify-self: start; margin-top: 4px; }
+  .reg-table .c-sector { display: block; grid-column: 3; grid-row: 2; margin-top: 4px; font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; width: auto; }
+  .reg-table .c-sector .sdot { margin-right: 5px; }
+  .reg-table .code-copy { min-height: 32px; min-width: 0; padding: 4px 8px; font-size: 12.5px; }
+  .reg-table .add-btn { width: 40px; min-width: 40px; min-height: 40px; }
+  .reg-table .tchip { font-size: 11px; padding: 3px 7px; }
+}
+
+/* ---------------------------------------------------------------- Animated section backgrounds (fx.js)
+   Layers: deep gradient base, drifting colour glows, fine dot grid, live network canvas, slow light sheen. */
+.hero, .page-head {
+  background:
+    radial-gradient(900px 520px at 78% 18%, rgba(27,74,150,.55), transparent 70%),
+    linear-gradient(135deg, #040E22 0%, #0A1F44 48%, #0E2F63 100%);
+}
+.band:not(.band--light) { background: linear-gradient(135deg, #040E22 0%, #0A1F44 55%, #0B3A5E 120%); }
+.band:not(.band--light)::before { display: none; }
+.fx { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; display: block; }
+.fx > * { position: absolute; display: block; }
+@media (prefers-reduced-motion: no-preference) {
+        .tray__panel { border-radius: var(--r-diag-md); }
+
+/* ==========================================================================
+   PLATFORM PAGE: teal + orange brand balance, better phone layout
+   ========================================================================== */
+.hero, .page-head, .dark, .band:not(.band--light) {
+  background:
+    radial-gradient(900px 520px at 78% 18%, rgba(15,211,196,.22), transparent 70%),
+    linear-gradient(135deg, #031A2A 0%, #06324A 52%, #0A4F66 100%);
+}
+.hero::before { background: linear-gradient(0deg, rgba(3,22,36,.5) 0%, rgba(3,22,36,0) 55%), linear-gradient(100deg, rgba(3,22,36,.72) 0%, rgba(4,40,58,.4) 48%, rgba(10,79,102,.04) 100%); }
+.page-head::before { background: linear-gradient(100deg, rgba(3,22,36,.78) 0%, rgba(4,40,58,.45) 55%, rgba(10,79,102,.06) 100%); }
+.is-platform .hero h1 em, .is-platform .eyebrow { color: var(--teal); }
+
+/* headings: dark ink with a short teal-to-orange rule instead of all-navy */
+main h2, main h3 { color: var(--ink); }
+.hero h1, .cta h2, .band h2, .dark h2, .dark h3, .page-head h1 { color: #fff; }
+.section-head h2::after, .is-platform .verify h2::after, .is-platform #manual h2::after {
+  content: ""; display: block; width: 56px; height: 4px; margin-top: 14px; border-radius: 4px; background: linear-gradient(90deg, var(--teal), var(--amber));
+}
+.cta h2::after, .dark .section-head h2::after { display: none; }
+
+/* role tabs: diagonal-corner tabs, teal when selected */
+.is-platform .roles__tab { border-radius: 12px 0 12px 0; }
+.is-platform .roles__tab:hover { border-color: var(--teal-2); }
+.is-platform .roles__tab[aria-selected="true"] { background: linear-gradient(135deg, #5CF0E3, var(--teal)); border-color: var(--teal); color: var(--ink); }
+.is-platform .roles__panel li::before { border-radius: 2px; transform: rotate(45deg); background: var(--teal-2); width: 8px; height: 8px; top: .62em; }
+.is-platform .roles__panel .frame { border-top: 4px solid var(--amber); }
+
+/* verification section: soft teal tint, table becomes cards on small screens */
+.is-platform .section.alt { background: linear-gradient(180deg, #ECFBF8, #F6FDFC); }
+.is-platform .verify th { color: var(--teal-700); text-transform: uppercase; letter-spacing: .08em; font-size: 12px; }
+.is-platform .verify td:last-child { color: var(--teal-700); font-weight: 600; }
+
+/* trust items: colour-coded blocks like the Services page */
+.is-platform .trust { gap: 14px 24px; }
+.is-platform .trust > div {
+  position: relative; padding: 20px 22px 20px 26px; border: 1px solid var(--line); border-top-width: 1px; border-radius: var(--r-diag-sm);
+  background: #fff; overflow: hidden;
+}
+.is-platform .trust > div::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background: var(--teal-2); }
+.is-platform .trust > div:nth-child(even)::before { background: var(--amber); }
+.is-platform .trust h3 { color: var(--ink); }
+
+/* closing call to action: teal-led */
+.cta { background: #05283A; }
+.cta::before { background: linear-gradient(135deg, rgba(3,22,36,.9) 0%, rgba(6,50,74,.85) 55%, rgba(10,100,120,.7) 100%); }
+.is-platform .faq__q svg { color: var(--teal-2); }
+
+@media (max-width: 720px) {
+  /* hero: tighter, screenshot sits right under the copy */
+  .is-platform .hero.lg .container { padding: 36px 0 70px; }
+  .is-platform .hero h1 { font-size: clamp(27px, 7.4vw, 34px); line-height: 1.12; }
+  .is-platform .hero p { font-size: 16px; }
+  .is-platform .hero-actions { gap: 8px; margin-top: 22px; }
+
+  /* roles: 2x2 grid of tabs, no ragged wrapping */
+  .is-platform .roles__tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 22px; }
+  .is-platform .roles__tab { padding: 0 8px; min-height: 52px; font-size: 13.5px; line-height: 1.2; }
+  .is-platform .roles__panel { gap: 20px; }
+  .is-platform .roles__panel h3 { font-size: 21px; }
+
+  /* verification table -> stacked cards */
+  .is-platform .verify table, .is-platform .verify tbody { display: block; }
+  .is-platform .verify thead { display: none; }
+  .is-platform .verify tr { display: block; margin-bottom: 10px; padding: 14px 16px 14px 20px; background: #fff; border: 1px solid var(--line); border-left: 4px solid var(--teal-2); border-radius: 12px 0 12px 0; }
+  .is-platform .verify tr:nth-child(even) { border-left-color: var(--amber); }
+  .is-platform .verify td { display: block; width: auto; padding: 0; border: 0; }
+  .is-platform .verify td:first-child { width: auto; font-size: 15.5px; }
+  .is-platform .verify td:last-child { margin-top: 4px; font-size: 13.5px; }
+  .is-platform .verify td:last-child::before { content: "Where it lives: "; font-weight: 500; color: var(--g600); }
+
+  /* manual card: cover and text side by side, full-width button underneath */
+  .is-platform .band--light .manual { grid-template-columns: 84px minmax(0, 1fr); gap: 14px; padding: 16px; align-items: start; }
+  .is-platform .band--light .manual > div { display: contents; }
+  .is-platform .band--light .manual > div p { grid-column: 2; margin: 0; font-size: 14.5px; }
+  .is-platform .band--light .manual .btn { grid-column: 1 / -1; width: 100%; margin: 0; }
+
+  .is-platform .trust { grid-template-columns: 1fr; }
+}
+.is-platform .band--light h2 { color: var(--ink); }
+.is-platform .faq__q, .is-platform .more-btn { color: var(--ink); }
+.is-platform .more-btn { border-color: var(--teal-2); }
+
+/* ==========================================================================
+   MATERIALS REGISTER v3: a catalogue of cards, not a spreadsheet.
+   Same card language as the Services and home pages: type-coloured top edge,
+   soft corner triangle, diagonal corners, one clear hierarchy per card.
+   ========================================================================== */
+.is-register .reg { padding: 28px 0 64px; }
+.is-register .reg-layout { grid-template-columns: 236px minmax(0, 1fr); gap: 36px; }
+
+/* sector list: light, no box. Selected row gets a teal edge */
+.is-register .reg-rail { background: none; border: 0; box-shadow: none; border-radius: 0; padding: 0 4px 0 0; }
+.is-register .reg-rail__h { color: var(--teal-700); margin: 0 0 10px 12px; }
+.is-register .reg-rail a { border-radius: 0; padding: 9px 12px; border-left: 3px solid transparent; font-weight: 500; }
+.is-register .reg-rail a:hover { background: rgba(15,211,196,.08); }
+.is-register .reg-rail a[aria-current="true"] { background: rgba(15,211,196,.14); border-left-color: var(--teal-2); color: var(--ink); font-weight: 700; }
+.is-register .reg-rail a[aria-current="true"] b { color: var(--teal-700); }
+.is-register .reg-rail a[aria-current="true"] .sdot { box-shadow: none; }
+
+/* toolbar */
+.is-register .reg-tools { gap: 12px; margin-bottom: 16px; }
+.is-register .reg-search .input { min-height: 56px; font-size: 16px; }
+.is-register .seg[aria-pressed="true"] { background: linear-gradient(135deg, #5CF0E3, var(--teal)); color: var(--ink); }
+.is-register .seg[aria-pressed="true"] b { color: var(--teal-700); }
+.is-register .reg-meta { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 0 0 14px; }
+.is-register .reg-meta .reg-count { margin: 0; }
+.is-register .reg-sort { display: inline-flex; align-items: center; gap: 8px; font: 600 13px var(--font); color: var(--g600); }
+.is-register .reg-sort .select { width: auto; min-height: 40px; padding: 6px 34px 6px 12px; font-size: 14px; font-weight: 600; background-position: right 12px center; }
+
+/* the cards */
+.is-register .reg-tablewrap { background: none; border: 0; box-shadow: none; border-radius: 0; overflow: visible; }
+.is-register .reg-table, .is-register .reg-table tbody { display: block; }
+.is-register .reg-table thead { display: none; }
+.is-register .reg-table tbody { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 285px), 1fr)); gap: 18px; }
+.is-register .reg-table tbody tr {
+  position: relative; display: grid; grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas: "type code" "title title" "sector sector" "add add";
+  align-content: start; gap: 8px 10px; align-items: center;
+  padding: 18px 18px 16px; overflow: hidden;
+  background: linear-gradient(180deg, #fff, #F6F9FD); border: 1px solid var(--line); border-top: 4px solid var(--row, var(--g200));
+  border-radius: 18px 0 18px 0; box-shadow: var(--sh-sm);
+  transition: transform .25s var(--ease), box-shadow .25s, border-color .25s;
+}
+.is-register .reg-table tbody tr:hover { transform: translateY(-3px); box-shadow: var(--sh-md); border-color: var(--line); border-top-color: var(--row, var(--g200)); }
+.is-register .reg-table tbody tr::after { content: ""; position: absolute; right: 0; bottom: 0; width: 64px; height: 64px; pointer-events: none; clip-path: polygon(100% 0, 100% 100%, 0 100%); background: linear-gradient(135deg, rgba(0,0,0,0), var(--row-soft, rgba(21,58,119,.18))); }
+.is-register .reg-table tbody tr[data-type="QCTO"] { --row: var(--navy); --row-soft: rgba(21,58,119,.22); }
+.is-register .reg-table tbody tr[data-type="SP"] { --row: var(--teal-2); --row-soft: rgba(15,211,196,.40); }
+.is-register .reg-table tbody tr[data-type="MQA"] { --row: var(--amber); --row-soft: rgba(254,154,54,.42); }
+.is-register .reg-table tbody tr[data-type="CORE"] { --row: #9AA9BD; --row-soft: rgba(154,169,189,.35); }
+.is-register .reg-table tbody tr[hidden] { display: none; }
+.is-register .reg-table td, .is-register .reg-table tbody tr td:first-child { display: block; padding: 0; border: 0; box-shadow: none; width: auto; background: none; position: static; }
+.is-register .reg-table tbody tr:hover td { background: none; }
+
+.is-register .reg-table .c-type { grid-area: type; justify-self: start; }
+.is-register .reg-table .tchip { font-size: 11.5px; padding: 4px 9px; letter-spacing: .08em; }
+.is-register .reg-table .c-code { grid-area: code; justify-self: end; margin: 0; }
+.is-register .reg-table .code-copy { background: none; border: 0; padding: 0; min-height: 28px; min-width: 0; font: 500 12.5px var(--mono); color: var(--g600); cursor: copy; }
+.is-register .reg-table .code-copy::after { content: none; }
+.is-register .reg-table .code-copy:hover { color: var(--navy); }
+.is-register .reg-table .nocode { display: none; }
+.is-register .reg-table .c-title { grid-area: title; margin-top: 6px; }
+.is-register .reg-table .c-title .t { font-size: 18px; line-height: 1.28; font-weight: 700; color: var(--ink); }
+.is-register .reg-table .c-title .q { font-size: 13.5px; margin-top: 4px; color: var(--g600); }
+.is-register .reg-table .c-sector { grid-area: sector; margin: 6px 0 0; display: flex; align-items: center; width: auto; }
+.is-register .reg-table .c-sector { font: 600 12px var(--font); color: var(--ink); }
+.is-register .reg-table .c-sector::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--sector); margin-right: 8px; flex: none; }
+.is-register .reg-table .c-sector .sdot { display: none; }
+.is-register .reg-table .c-add { grid-area: add; margin-top: 8px; width: auto; text-align: left; }
+.is-register .reg-table .add-btn {
+  width: 100%; min-width: 0; min-height: 44px; padding: 0 16px; display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  border: 1.5px solid var(--navy); border-radius: 12px 0 12px 0; background: #fff; color: var(--navy); font: 700 14px var(--font);
+}
+.is-register .reg-table .add-btn:hover { background: var(--navy); color: #fff; }
+.is-register .reg-table .add-btn__t { position: static; width: auto; height: auto; margin: 0; clip: auto; clip-path: none; overflow: visible; }
+.is-register .reg-table .add-btn__i { width: 12px; height: 12px; }
+.is-register .reg-table .add-btn.is-on { background: linear-gradient(135deg, #5CF0E3, var(--teal)); border-color: var(--teal); color: var(--ink); }
+.is-register .reg-table .add-btn.is-on .add-btn__i { width: 6px; height: 11px; }
+
+.is-register .register-note { margin-top: 28px; }
+
+@media (max-width: 960px) {
+  .is-register .reg-layout { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .is-register .reg-table tbody { gap: 12px; grid-template-columns: 1fr; }
+}
+@media (min-width: 640px) and (max-width: 960px) { .is-register .reg-table tbody { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 720px) {
+  .is-register .reg-table tbody tr { padding: 16px 16px 14px; border-left: 1px solid var(--line); border-radius: 16px 0 16px 0; grid-template-areas: "type code" "title title" "sector sector" "add add"; }
+  .is-register .reg-table tbody tr:last-child { border-bottom: 1px solid var(--line); }
+  .is-register .reg-table .c-sector { display: flex; text-transform: none; letter-spacing: 0; font-size: 12.5px; }
+  .is-register .reg-meta { margin-bottom: 12px; }
+  .is-register .reg-sort span { display: none; }
+}
+@media (max-width: 960px) {
+  .is-register .reg-tools .reg-sector-select, .is-register .reg-tools .reg-type-select { flex: 1 1 calc(50% - 6px); }
+}
+
+/* v10: faceted triangle backgrounds replace the flow field */
+.fx-tri { inset: 0; width: 100%; height: 100%; display: block; }
+.hero .hero--amber .hero-shape.s1 { opacity: .4; mix-blend-mode: screen; }
+
+/* tap targets: keep the small code link visually light but give it a 44px hit area */
+.code-copy { position: relative; }
+.code-copy::before { content: ""; position: absolute; inset: -10px -8px; }

@@ -1,0 +1,151 @@
+<!--meta {"bodyClass": "is-platform", "path": "/platform/", "title": "Nexus Learn: LMS for QCTO Skills Development Providers", "description": "Nexus Learn is a learner management platform for QCTO-registered providers: records, marking, moderation, lessons and reports in one system.", "faq": [["Does Nexus Learn make us accredited?", "No. Accreditation is granted to your organisation by the QCTO or the relevant SETA. Nexus Learn keeps the records and evidence a verification visit asks for, and helps you produce them from live data."], ["Where is our data held?", "Nexus Learn runs on Google Firebase. The database region is chosen when your installation is set up, and we recommend Johannesburg (africa-south1) for South African providers."], ["Can we import our existing learners?", "Yes. Learners can be added one at a time or imported from a CSV file, and every report can be exported as CSV or Excel."], ["Who can see what?", "There are four roles: Administrator, Facilitator/Assessor, Moderator and Learner. Access is enforced by database security rules, not just hidden in the screens. A learner sees only their own record, and assessor notes are readable by staff only."], ["Does it replace our paper evidence?", "No. Evidence such as signed agreements and learner portfolios stays where you keep it. Each module links to the evidence, and the verification evidence pack shows what to produce from the system and what must come from elsewhere."], ["What does it need to run?", "A web browser for every user and a Google Firebase project for the installation. It has no server of its own to maintain."]], "ld": [{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Nexus Learn", "applicationCategory": "EducationalApplication", "operatingSystem": "Web", "description": "Learner management and learning platform for QCTO-registered skills development providers.", "publisher": {"@id": "https://levelnexus.co.za/#org"}}]}-->
+<main id="main">
+
+<section class="hero lg">
+  <span class="hero-bg" aria-hidden="true"></span>
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <h1>Learner records, marking and QCTO reporting in one system</h1>
+        <p>Nexus Learn is the learner management and learning platform from Level Nexus, built for QCTO-registered skills development providers.</p>
+        <div class="hero-actions"><a class="btn amber" href="contact.html?interest=Nexus%20Learn%20walkthrough">Book a walkthrough</a><a class="btn line-light" href="#roles">See what each role sees</a></div>
+      </div>
+      <div class="hero-shot" role="group" aria-label="Nexus Learn screens">
+        <div class="shot a"><img src="assets/img/platform/dashboard.webp" alt="Nexus Learn administrator dashboard showing learner counts, learners per qualification, enrolment status and a needs-attention list" width="1400" height="960" fetchpriority="high"></div>
+        <div class="shot b"><img src="assets/img/platform/learner-portal.webp" alt="Nexus Learn learner portal showing results by module and next dates" width="1400" height="960"></div>
+      </div>
+    </div>
+  </div>
+  <span class="tri" aria-hidden="true"></span>
+</section>
+
+<section class="section band band--light" id="manual">
+  <div class="container split rev wide-fig">
+    <div class="stack" role="group" aria-label="More Nexus Learn screens" tabindex="0">
+      <div class="shot"><img src="assets/img/platform/marking.webp" alt="Nexus Learn marking grid with learners down the side and modules across the top" loading="lazy" width="1400" height="972"></div>
+      <div class="shot b"><img src="assets/img/platform/reports.webp" alt="Nexus Learn reports page" loading="lazy" width="1400" height="1457"></div>
+      <div class="shot c"><img src="assets/img/platform/lessons.webp" alt="Nexus Learn lessons page" loading="lazy" width="1400" height="1263"></div>
+    </div>
+    <div>
+      <h2>Every screen is in the user manual</h2>
+      <p class="lead">The Nexus Learn user manual runs to 80 pages and goes through the system screen by screen for administrators, facilitator/assessors, moderators and learners.</p>
+      <div class="manual">
+        <img src="assets/img/platform/manual-cover.webp" alt="Cover of the Nexus Learn User Manual, document NL-UM-001" loading="lazy" width="579" height="500">
+        <div>
+          <p><b>Nexus Learn User Manual</b><br>NL-UM-001, issue 3.0, 11 October 2026. PDF, 80 pages.</p>
+          <a class="btn amber" href="assets/docs/Nexus-Learn-User-Manual-NL-UM-001.pdf" download>Download the manual</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="roles">
+  <div class="container">
+    <div class="section-head"><h2>Each role gets its own view</h2><p class="lead">Administrators, assessors, moderators and learners see the screens they need, and nothing else. Screens below use demonstration data.</p></div>
+    <div class="roles" data-tabs>
+      <div class="roles__tabs" role="tablist" aria-label="Role">
+        <button class="roles__tab" role="tab" type="button" aria-selected="true" aria-controls="role-admin" id="tab-admin">Administrator</button>
+        <button class="roles__tab" role="tab" type="button" aria-selected="false" aria-controls="role-assessor" id="tab-assessor" tabindex="-1">Facilitator / Assessor</button>
+        <button class="roles__tab" role="tab" type="button" aria-selected="false" aria-controls="role-moderator" id="tab-moderator" tabindex="-1">Moderator</button>
+        <button class="roles__tab" role="tab" type="button" aria-selected="false" aria-controls="role-learner" id="tab-learner" tabindex="-1">Learner</button>
+      </div>
+
+      <div class="roles__panel" role="tabpanel" id="role-admin" aria-labelledby="tab-admin">
+        <div>
+          <h3>Run the whole provider from one dashboard</h3>
+          <p>Administrators see everything, including users and settings. The dashboard flags what needs attention: overdue enrolments, modules a moderator has not confirmed, and accreditation dates running out.</p>
+          <ul><li>Add qualifications with exact module codes, credits and NQF levels, and enrol learners one at a time or by CSV import</li><li>Run the QCTO quarter pack and other reports, exported as CSV or Excel</li><li>Back up on demand and keep staff logins to the least role that does the job</li></ul>
+        </div>
+        <div class="frame frame--full"><div class="frame__bar"><i></i><i></i><i></i><span>Learners</span></div><img src="assets/img/platform/learners.webp" alt="Nexus Learn learners list with search, filters and readiness" loading="lazy" width="1400" height="875"></div>
+      </div>
+
+      <div class="roles__panel" role="tabpanel" id="role-assessor" aria-labelledby="tab-assessor" hidden>
+        <div>
+          <h3>Mark a whole cohort on one grid</h3>
+          <p>Assessors work from a queue of modules awaiting assessment, oldest first, and record each attempt with its date, outcome and note.</p>
+          <ul><li>Tick cells on the marking grid and record a result for the whole group; skipped cells are listed afterwards</li><li>Every attempt is kept: earlier attempts are never changed</li><li>Log appeals, with the date and outcome, against the module they concern</li></ul>
+        </div>
+        <div class="frame frame--full"><div class="frame__bar"><i></i><i></i><i></i><span>Marking grid</span></div><img src="assets/img/platform/marking.webp" alt="Nexus Learn marking grid with learners down the side and modules across the top" loading="lazy" width="1400" height="972"></div>
+      </div>
+
+      <div class="roles__panel" role="tabpanel" id="role-moderator" aria-labelledby="tab-moderator" hidden>
+        <div>
+          <h3>Confirm second-person moderation</h3>
+          <p>Moderators see a queue of modules awaiting moderation. They can read the assessor's notes and every attempt, then confirm the module or send it back for review.</p>
+          <ul><li>The system will not let anyone confirm their own assessment</li><li>Anything not confirmed stays on the dashboard's needs-attention list until it is reviewed again</li><li>A learner counts as ready for EISA only when every module is assessed competent and internally moderated</li></ul>
+        </div>
+        <div class="frame frame--full"><div class="frame__bar"><i></i><i></i><i></i><span>Reports</span></div><img src="assets/img/platform/reports.webp" alt="Nexus Learn reports page" loading="lazy" width="1400" height="1457" style="aspect-ratio:1400/960;object-fit:cover;object-position:top"></div>
+      </div>
+
+      <div class="roles__panel" role="tabpanel" id="role-learner" aria-labelledby="tab-learner" hidden>
+        <div>
+          <h3>A focused home for each learner</h3>
+          <p>Learners see their own results by module, their key dates and their lessons, and nothing that belongs to anyone else.</p>
+          <ul><li>Study lessons, including documents, video and Google Drive links, and tick them off as a personal record</li><li>See every attempt on every module, and download their own data</li><li>Print the provider's certificate of completion once it is issued</li></ul>
+        </div>
+        <div class="frame frame--full"><div class="frame__bar"><i></i><i></i><i></i><span>Learner view</span></div><img src="assets/img/platform/learner-portal.webp" alt="Nexus Learn learner dashboard showing results by module and next dates" loading="lazy" width="1400" height="972"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container verify">
+    <div>
+      <h2>Ready for a verification visit</h2>
+      <p class="lead">A QCTO or SETA verification visit asks a provider to show its records. Nexus Learn helps you produce them from live data instead of from memory.</p>
+      <p>Nexus Learn supports an accreditation file; it does not grant accreditation or replace evidence you keep elsewhere, such as signed agreements and learner portfolios. This list is a starting point, not the QCTO's own checklist, so check it against the letter announcing each visit.</p>
+    </div>
+    <table>
+      <thead><tr><th scope="col">A verifier typically asks</th><th scope="col">Where it lives</th></tr></thead>
+      <tbody>
+        <tr><td>Who is on your programmes</td><td>Learner register report</td></tr>
+        <tr><td>What each learner was assessed on, when and by whom</td><td>Module progress report</td></tr>
+        <tr><td>That a second person moderated</td><td>Moderator and date on every module</td></tr>
+        <tr><td>Appeals and their outcomes</td><td>Appeal status and notes on each module</td></tr>
+        <tr><td>Learners ready for EISA</td><td>EISA-ready list</td></tr>
+        <tr><td>That records are traceable</td><td>Activity log of who changed which record</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><h2>Built to protect learner information</h2><p class="lead">Learner records hold identity numbers, disability status and demographic categories. That is special personal information under POPIA, so the protections are built in.</p></div>
+    <div class="trust" data-collapse="3">
+      <div><h3>Rules enforced on the server</h3><p>Access is controlled by database security rules, not just hidden in the screens. The release notes record 258 of 258 security-rule tests passing on 14 October 2026.</p></div>
+      <div><h3>Assessor notes stay with staff</h3><p>Evidence notes and appeal notes are held separately, so a learner who opens their own record cannot read them.</p></div>
+      <div><h3>POPIA tools</h3><p>A consent tick and date on the learner form, a one-click data download, anonymise, a retention review report and Information Officer settings.</p></div>
+      <div><h3>Automatic sign-out</h3><p>Idle sessions are signed out after 20 minutes, with a warning first, and weak passwords are refused.</p></div>
+      <div><h3>Backups</h3><p>Automatic daily backup snapshots, a one-click backup you can download, and a banner that warns when a backup is overdue.</p></div>
+      <div><h3>Where your data sits</h3><p>The database region is chosen when your installation is set up. We recommend Johannesburg for South African providers.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container narrow">
+    <h2 style="margin-bottom:28px">Questions providers ask</h2>
+    <div class="faq">
+      <div class="faq__item"><button class="faq__q" type="button"><span>Does Nexus Learn make us accredited?</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq__a"><p>No. Accreditation is granted to your organisation by the QCTO or the relevant SETA. Nexus Learn keeps the records and evidence a verification visit asks for, and helps you produce them from live data.</p></div></div>
+      <div class="faq__item"><button class="faq__q" type="button"><span>Where is our data held?</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq__a"><p>Nexus Learn runs on Google Firebase. The database region is chosen when your installation is set up, and we recommend Johannesburg (africa-south1) for South African providers.</p></div></div>
+      <div class="faq__item"><button class="faq__q" type="button"><span>Can we import our existing learners?</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq__a"><p>Yes. Learners can be added one at a time or imported from a CSV file, and every report can be exported as CSV or Excel.</p></div></div>
+      <div class="faq__item"><button class="faq__q" type="button"><span>Who can see what?</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq__a"><p>There are four roles: Administrator, Facilitator/Assessor, Moderator and Learner. Access is enforced by database security rules, not just hidden in the screens. A learner sees only their own record, and assessor notes are readable by staff only.</p></div></div>
+      <div class="faq__item"><button class="faq__q" type="button"><span>Does it replace our paper evidence?</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq__a"><p>No. Evidence such as signed agreements and learner portfolios stays where you keep it. Each module links to the evidence, and the verification evidence pack shows what to produce from the system and what must come from elsewhere.</p></div></div>
+      <div class="faq__item"><button class="faq__q" type="button"><span>What does it need to run?</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq__a"><p>A web browser for every user and a Google Firebase project for the installation. It has no server of its own to maintain. Ask us about setup and ongoing costs when you book a walkthrough.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<p class="builtwith">Nexus Learn was created with our technology partner <a href="https://fsv-tech.com" rel="noopener" target="_blank">FSV Tech</a>, Doha.</p>
+
+<section class="cta section">
+  <div class="container">
+    <h2>See Nexus Learn with your qualifications in it</h2>
+    <p>Tell us what you deliver and we will arrange a walkthrough.</p>
+    <div class="btn-row"><a class="btn amber" href="contact.html?interest=Nexus%20Learn%20walkthrough">Book a walkthrough</a><a class="btn line-light" href="https://wa.me/27847624831" data-wa="Hi Level Nexus, I would like a walkthrough of Nexus Learn." rel="noopener" target="_blank">WhatsApp us</a></div>
+  </div>
+</section>
+</main>

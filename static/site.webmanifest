@@ -1,0 +1,29 @@
+{
+  "name": "Level Nexus — QCTO Materials & Accreditation Support",
+  "short_name": "Level Nexus",
+  "description": "QCTO-aligned and legacy learnership training material, plus accreditation support for Skills Development Providers in South Africa.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#F7F9FC",
+  "theme_color": "#0B1F3F",
+  "lang": "en-ZA",
+  "icons": [
+    {
+      "src": "/assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icons/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+/* ==========================================================================
+   MOBILE REFINEMENTS  (loaded last, phone widths only)
+   Existing brand tokens, type and component styles are reused. Nothing here
+   applies above 760px, so the desktop layout and the full desktop footer are
+   untouched. Rules are scoped to the blocks that were adding the most height.
+   ========================================================================== */
+
+/* "Show more" toggle: only exists on phones, added by ui.js (initCollapse). */
+.more-btn { display: none; }
+
+@media (max-width: 760px) {
+
+  /* --- utility bar: one 40px row instead of 58px ---------------------- */
+  .util .container { padding: 0; }
+  .util a { min-height: 40px; }
+
+  /* --- home hero: tighter bottom edge, shorter screenshot -------------- */
+  .hero .container, .hero.lg .container { padding-bottom: 46px; }
+  .hero-shot .shot.a img { aspect-ratio: 16 / 9; object-fit: cover; object-position: top left; }
+
+  /* --- stat band ------------------------------------------------------- */
+
+  /* --- supply cards: swipe rail, like the galleries below them --------- */
+  .grid.g3.bento {
+    display: flex; flex-wrap: nowrap; gap: 12px; padding: 4px 0 18px;
+    overflow-x: auto; overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  }
+  .grid.g3.bento::-webkit-scrollbar { display: none; }
+  .grid.g3.bento > .card { flex: 0 0 82%; min-width: 0; scroll-snap-align: start; }
+  .js-motion .grid.g3.bento > .card { opacity: 1; transform: none; }
+
+  /* --- single photos beside copy: landscape crop, not a full portrait --- */
+  .split > .photo img { aspect-ratio: 16 / 9; object-fit: cover; }
+
+  /* --- partner card ---------------------------------------------------- */
+  .ptn { gap: 12px; padding: 16px 16px 14px; }
+  .ptn .fsv-tile img { max-height: 36px; }
+  .ptn h3 { font-size: 18px; margin-bottom: 4px; }
+  .ptn p { margin-bottom: 6px; font-size: 14.5px; }
+
+  /* --- long lists: first few rows, rest behind a toggle ----------------- */
+  .is-collapsed > .c-extra { display: none; }
+  .more-btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    min-height: 44px; margin-top: 6px; padding: 0 18px;
+    font: 600 14px var(--font); color: var(--navy); background: transparent;
+    border: 1.5px solid var(--navy-300); border-radius: 999px; cursor: pointer;
+  }
+  .more-btn::after {
+    content: ""; width: 7px; height: 7px; margin-top: -3px;
+    border-right: 2px solid currentColor; border-bottom: 2px solid currentColor;
+    transform: rotate(45deg); transition: transform .2s;
+  }
+  .more-btn[aria-expanded="true"]::after { transform: rotate(-135deg); margin-top: 3px; }
+  .more-btn:focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; }
+  .section.dark .more-btn, .dark .more-btn { color: #fff; border-color: rgba(255,255,255,.5); }
+  .svc .more-btn { justify-self: start; margin-top: 2px; }
+
+  /* platform: trust points as compact rows */
+  .trust > div { padding: 14px 0; }
+  .trust h3 { font-size: 16px; margin: 0 0 4px; }
+  .trust p { font-size: 14.5px; }
+
+  /* --- photo band ------------------------------------------------------ */
+  .photo-band .btn-row { margin-top: 18px !important; }
+}
+
+@media (max-width: 980px) {
+  /* ----------------------------------------------------------------------
+     FOOTER: brand, one contact line, partner, copyright, privacy.
+     Applies wherever the header collapses to the menu button (980px and
+     below). The sitemap and sector columns repeat that menu, so they go.
+     Contact rows that duplicate the WhatsApp icon, the sticky bar and the
+     Contact page are dropped too.
+     ---------------------------------------------------------------------- */
+  footer { padding: 16px 0 0; border-top-width: 3px; }
+  .fgrid { grid-template-columns: 1fr; }
+  .fgrid .fcol--nav, .fbrand p { display: none; }
+  footer::after { display: none; }
+  .fgrid { gap: 2px; padding-bottom: 4px; }
+  .fbrand { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .fbrand .social { margin: 0; gap: 8px; }
+  .fcol--contact .fh { display: none; }
+  footer .f-more { display: none; }
+  .fcontact li { margin: 0; }
+  .fcontact strong { display: none; }
+  .fcontact a { min-height: 44px; }
+
+  footer .fpartner {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 0 12px; padding: 6px 0;
+  }
+  footer .fpartner small { font-size: 11px; }
+  footer .fpartner .fsv-tile img { max-height: 24px; }
+  footer .fpartner__links a { min-height: 44px; }
+
+  /* The sticky action bar hides while the footer is on screen (ui.js), so
+     only the round back-to-top button needs clearing on the right. */
+  footer .fbar {
+    flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: space-between;
+    gap: 0 16px; padding: 4px 64px calc(10px + env(safe-area-inset-bottom, 0px)) 0;
+  }
+  footer .fbar p { margin: 0; }
+}
+
+@media (min-width: 761px) and (max-width: 900px) {
+  .grid.g3.bento {
+    display: flex; flex-wrap: nowrap; gap: 16px; padding: 4px 0 18px;
+    overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;
+  }
+  .grid.g3.bento::-webkit-scrollbar { display: none; }
+  .grid.g3.bento > .card { flex: 0 0 44%; min-width: 0; scroll-snap-align: start; }
+  .js-motion .grid.g3.bento > .card { opacity: 1; transform: none; }
+}
+
+@media (max-width: 560px) {
+  /* the util bar's only job on a phone is the call link */
+  .util .container { min-height: 40px; }
+}
+
+/* Sticky action bar steps aside once the footer is in view. */
+.stickbar.over-footer { opacity: 0 !important; visibility: hidden; pointer-events: none !important; }
